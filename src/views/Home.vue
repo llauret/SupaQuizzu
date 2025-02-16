@@ -5,7 +5,7 @@
   </div>
 
 
-  <router-link to="/question">Start</router-link>
+  <router-link to="/question/1">Start</router-link>
 </template>
 <script setup>
 </script>
