@@ -1,13 +1,17 @@
 <template>
   <score/>
   <ai-query></ai-query>
-  <div>
-    Question : {{ question }}
-    <answer
-        :answers="answers"
-        :correctAnswer="correctAnswer"
-        @select-answer="checkAnswer"
-    ></answer>
+  <div class="w-full h-[52rem] justify-center items-center place-content-center">
+    <div class="text-center font-bold text-4xl mb-4">
+      {{ question }}
+    </div>
+    <div class="flex justify-center items-center w-full mx-auto p-4">
+      <answer
+          :answers="answers"
+          :correctAnswer="correctAnswer"
+          @select-answer="checkAnswer"
+      ></answer>
+    </div>
   </div>
 </template>
 

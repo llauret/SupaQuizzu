@@ -1,8 +1,9 @@
 <template>
   <div id='app'>
     <router-view></router-view>
+    <top-bar></top-bar>
   </div>
 </template>
-<script lang="ts" setup>
-import AiQuery from "@/components/ai-query.vue";
+<script setup>
+import TopBar from "@/components/top-bar.vue";
 </script>
