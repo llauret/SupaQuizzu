@@ -1,5 +1,5 @@
 <template>
-  <div class="background-container flex justify-center items-center w-full h-[62.9rem] mx-auto p-4 z-50">
+  <div class="background-container flex justify-center items-center w-full h-[62.9rem] mx-auto p-4">
     <div class="flex-wrap text-center">
       <h1 class="text-4xl font-bold mb-4">SUPER QUIZZU</h1>
       <router-link class="text-blue-500 hover:underline mb-4 inline-block bg-white rounded p-2 font-bold"

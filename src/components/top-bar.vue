@@ -1,5 +1,6 @@
 <template>
-  <div class="flex top-0 justify-end absolute z-50 w-full bg-white shadow-md p-4">
+  <div class="flex top-0 justify-between absolute z-50 w-full bg-white shadow-md p-4">
+    <router-link class="text-blue-500 hover:underline" to="/">Home</router-link>
     <dark-mode></dark-mode>
   </div>
 </template>
