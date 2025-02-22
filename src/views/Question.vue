@@ -1,5 +1,6 @@
 <template>
   <score/>
+  <ai-query></ai-query>
   <div>
     Question : {{ question }}
     <answer
@@ -17,6 +18,7 @@ import {supabase} from "@/lib/supabaseClient.js";
 import {useStatStore} from "@/stores/stat.store.js";
 import router from "@/router.js";
 import Score from "@/components/score.vue";
+import AiQuery from "@/components/ai-query.vue";
 
 const statStore = useStatStore();
 
