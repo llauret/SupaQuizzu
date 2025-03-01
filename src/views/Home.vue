@@ -3,7 +3,7 @@
     <div class="flex-wrap text-center">
       <h1 class="text-4xl font-bold mb-4">SUPER QUIZZU</h1>
       <router-link class="text-blue-500 hover:underline mb-4 inline-block bg-white rounded p-2 font-bold"
-                   to="/question/1">Start
+                   to="/question">Start
       </router-link>
     </div>
     <form-create :displayCondtion="isFormCreateVisible"></form-create>
@@ -16,9 +16,18 @@
 <script setup>
 import {Button} from "@/components/ui/button";
 import FormCreate from "@/components/form-create.vue";
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
+import {useQuestionStore} from "@/stores/question.store.js";
+import {useStatStore} from "@/stores/stat.store.js";
 
 const isFormCreateVisible = ref(false);
+const questionStore = useQuestionStore();
+const statStore = useStatStore();
+
+onMounted(() => {
+  questionStore.setQuestionNumber(0);
+  statStore.resetPointCounter();
+});
 
 const toggleIsFormCreateVisible = () => {
   isFormCreateVisible.value = !isFormCreateVisible.value;
@@ -27,7 +36,6 @@ const toggleIsFormCreateVisible = () => {
 
 <style scoped>
 .background-container {
-  background-image: url('/waza.gif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
