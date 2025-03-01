@@ -4,13 +4,15 @@
       class="absolute inset-0 bg-white dark:bg-gray-800 bg-opacity-50 flex justify-center items-center z-50"
   >
     <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-full max-w-md">
-      <div
-          class="bg-red-500 p-2 rounded cursor-pointer text-white"
-          @mousedown="displayCondition = false"
-      >
-        X
+
+      <div class="flex justify-between mb-4">
+        <h2 class="text-xl  font-bold text-black dark:text-white">Créer un quiz</h2>
+        <div
+            class="inline-block bg-red-500 p-1.5 rounded font-bold cursor-pointer text-white"
+            @mousedown="displayStore.isFormCreateVisible = false">
+          X
+        </div>
       </div>
-      <h2 class="text-xl mb-4 font-bold text-black dark:text-white">Créer un quiz</h2>
 
       <div class="mb-4">
         <label class="block text-sm font-medium text-black dark:text-gray-300" for="quiz-category">
@@ -101,10 +103,13 @@ import {SelectContent} from "@/components/ui/select";
 import {SelectGroup} from "@/components/ui/select";
 import {SelectLabel} from "@/components/ui/select";
 import {SelectValue} from "@/components/ui/select";
+import {useDisplayStore} from "@/stores/display.store.js";
 
 defineProps({
   displayCondtion: Boolean
 })
+
+const displayStore = useDisplayStore();
 
 const quizCategory = ref([]);
 const quiz = ref('');

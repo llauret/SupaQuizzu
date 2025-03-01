@@ -1,5 +1,5 @@
 <template>
-  <score/>
+  <score :score-change="scoreChange"/>
   <ai-query></ai-query>
   <div class="w-full h-[52rem] justify-center items-center place-content-center">
     <div class="text-center font-bold text-4xl mb-4">
@@ -29,6 +29,7 @@ const questionStore = useQuestionStore();
 const statStore = useStatStore();
 
 const currentQuestion = ref(null);
+const scoreChange = ref(false);
 
 onMounted(async () => {
   await getQuestion();
