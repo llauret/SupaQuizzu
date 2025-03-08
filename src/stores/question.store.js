@@ -4,6 +4,7 @@ export const useQuestionStore = defineStore('questionStore', {
     state: () => ({
         question: localStorage.getItem('question') || JSON.parse(localStorage.getItem('question')) || [],
         questionNumber: parseInt(localStorage.getItem('questionNumber')) || 0,
+        questionType: ''
     }),
     actions: {
         setQuestions(question) {

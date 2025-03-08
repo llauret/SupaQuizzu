@@ -1,5 +1,5 @@
 <template>
-  <div class="background-container flex justify-center items-center w-full h-[62.9rem] mx-auto p-4">
+  <div class="background-container flex justify-center items-center w-full h-[66.6rem] mx-auto p-4">
     <div class="flex-wrap text-center">
       <h1 class="text-4xl font-bold mb-4">SUPA QUIZZU</h1>
       <router-link class="text-blue-500 hover:underline mb-4 inline-block bg-white rounded p-2 font-bold"
@@ -16,12 +16,11 @@
 <script setup>
 import {Button} from "@/components/ui/button";
 import FormCreate from "@/components/form-create.vue";
-import {onMounted, ref} from "vue";
+import {onMounted} from "vue";
 import {useQuestionStore} from "@/stores/question.store.js";
 import {useStatStore} from "@/stores/stat.store.js";
 import {useDisplayStore} from "@/stores/display.store.js";
 
-const isFormCreateVisible = ref(false);
 const displayStore = useDisplayStore();
 const questionStore = useQuestionStore();
 const statStore = useStatStore();

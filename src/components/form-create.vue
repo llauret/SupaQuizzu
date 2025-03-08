@@ -3,7 +3,7 @@
       v-if="displayCondtion"
       class="absolute inset-0 bg-white dark:bg-gray-800 bg-opacity-50 flex justify-center items-center z-50"
   >
-    <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg w-full max-w-md">
+    <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg h-[60vh] w-1/2">
 
       <div class="flex justify-between mb-4">
         <h2 class="text-xl  font-bold text-black dark:text-white">Créer un quiz</h2>
@@ -14,77 +14,86 @@
         </div>
       </div>
 
-      <div class="mb-4">
-        <label class="block text-sm font-medium text-black dark:text-gray-300" for="quiz-category">
-          Sélectionner le thème du quiz
-        </label>
-        <Select v-model="quiz">
-          <SelectTrigger class="mt-1">
-            <SelectValue :placeholder="quiz ? quiz : 'Choisir une catégorie'"/>
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>Catégories</SelectLabel>
-              <SelectItem
-                  v-for="(category, index) in quizCategory"
-                  :key="index"
-                  :value="category.titre"
-              >
-                {{ category.titre }}
-              </SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+      <div class="flex justify-center text-center p-5 gap-5 cursor-pointer w-full">
+        <Button class="w-full" @click="toggleMode('upload')">Upload un fichier</Button>
+        <Button class="w-full" @click="toggleMode('create')">Créer un quiz</Button>
       </div>
 
-      <div class="mb-4">
-        <label class="block text-sm font-medium text-black dark:text-gray-300" for="question">
-          Question à poser ?
-        </label>
-        <Input
-            id="question"
-            v-model="question"
-            class="mt-1"
-            name="question"
-            type="text"
-        />
-      </div>
+      <form-upload v-if="isUploadMode"></form-upload>
 
-      <div class="mb-4">
-        <div class="flex items-center justify-between mb-2">
-          <label class="block text-sm font-medium text-black dark:text-gray-300">
-            Réponse(s) possible(s)
+      <div v-else>
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-black dark:text-gray-300" for="quiz-category">
+            Sélectionner le thème du quiz
           </label>
-          <div>
-            <Button
-                id="add-answer"
-                class="mr-2"
-                variant="outline"
-                @click="addInput"
-            >
-              +
-            </Button>
-            <Button id="remove-answer" variant="outline" @click="removeInput">
-              -
-            </Button>
-          </div>
+          <Select v-model="quiz">
+            <SelectTrigger class="mt-1">
+              <SelectValue :placeholder="quiz ? quiz : 'Choisir une catégorie'"/>
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Catégories</SelectLabel>
+                <SelectItem
+                    v-for="(category, index) in quizCategory"
+                    :key="index"
+                    :value="category.titre"
+                >
+                  {{ category.titre }}
+                </SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
-        <div v-for="(reponse, index) in reponses" :key="index" class="flex items-center mb-2">
+
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-black dark:text-gray-300" for="question">
+            Question à poser ?
+          </label>
           <Input
-              v-model="reponses[index].reponse"
-              class="flex-1 mr-2"
-              name="answer"
+              id="question"
+              v-model="question"
+              class="mt-1"
+              name="question"
               type="text"
           />
-          <label class="inline-flex items-center">
-            <Checkbox v-model="reponses[index].est_correcte" name="correct-answer"/>
-          </label>
         </div>
-      </div>
 
-      <Button class="w-full" variant="primary" @click="addQuestion">
-        Ajouter question
-      </Button>
+        <div class="mb-4">
+          <div class="flex items-center justify-between mb-2">
+            <label class="block text-sm font-medium text-black dark:text-gray-300">
+              Réponse(s) possible(s)
+            </label>
+            <div>
+              <Button
+                  id="add-answer"
+                  class="mr-2"
+                  variant="outline"
+                  @click="addInput"
+              >
+                +
+              </Button>
+              <Button id="remove-answer" variant="outline" @click="removeInput">
+                -
+              </Button>
+            </div>
+          </div>
+          <div v-for="(reponse, index) in reponses" :key="index" class="flex items-center mb-2">
+            <Input
+                v-model="reponses[index].reponse"
+                class="flex-1 mr-2"
+                name="answer"
+                type="text"
+            />
+            <label class="inline-flex items-center">
+              <Checkbox v-model="reponses[index].est_correcte" name="correct-answer"/>
+            </label>
+          </div>
+        </div>
+
+        <Button class="w-full" variant="primary" @click="addQuestion">
+          Ajouter question
+        </Button>
+      </div>
     </div>
   </div>
 </template>
@@ -104,12 +113,12 @@ import {SelectGroup} from "@/components/ui/select";
 import {SelectLabel} from "@/components/ui/select";
 import {SelectValue} from "@/components/ui/select";
 import {useDisplayStore} from "@/stores/display.store.js";
+import FormUpload from "@/components/form-upload.vue";
 
-defineProps({
-  displayCondtion: Boolean
-})
+defineProps({displayCondtion: Boolean});
 
 const displayStore = useDisplayStore();
+const isUploadMode = ref(false);
 
 const quizCategory = ref([]);
 const quiz = ref('');
@@ -124,6 +133,10 @@ onMounted(async () => {
 const formattedQuestion = computed(() => {
   return question + '?'
 })
+
+const toggleMode = (mode) => {
+  isUploadMode.value = (mode === 'upload');
+};
 
 const addInput = () => {
   if (reponses.value.length < 4) reponses.value.push({reponse: '', est_correcte: false});
