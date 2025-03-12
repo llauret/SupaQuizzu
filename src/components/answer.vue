@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 w-96 gap-4">
+  <div class="grid grid-cols-2 w-full gap-4">
     <Button v-for="(answer, index) in answers" :key="index" @click="emitAnswer(answer.reponse)">
       {{ answer.reponse }}
     </button>

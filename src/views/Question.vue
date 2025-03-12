@@ -1,5 +1,8 @@
 <template>
-  <score :score-change="scoreChange"/>
+  <div class="flex gap-5">
+    <score :score-change="scoreChange"/>
+    <question-count/>
+  </div>
   <ai-query></ai-query>
   <div class="w-full h-[52rem] justify-center items-center place-content-center">
     <div class="text-center font-bold text-4xl mb-4">
@@ -24,8 +27,11 @@ import Score from "@/components/score.vue";
 import AiQuery from "@/components/ai-query.vue";
 import router from "@/router.js";
 import {useQuestionStore} from "@/stores/question.store.js";
+import QuestionCount from "@/components/question-count.vue";
+import {useModeStore} from "@/stores/mode.store.js";
 
 const questionStore = useQuestionStore();
+const modeStore = useModeStore();
 const statStore = useStatStore();
 
 const currentQuestion = ref(null);
@@ -36,7 +42,10 @@ onMounted(async () => {
 });
 
 async function getQuestion() {
-  const {data} = await supabase.rpc('get_question');
+  const {data} = await supabase.rpc('get_custom_question', {
+    nombre: modeStore.questionAmount,
+    quiz_type: modeStore.quizSelected
+  });
   currentQuestion.value = groupQuestionsByID(data);
   questionStore.setQuestions(currentQuestion.value);
 }

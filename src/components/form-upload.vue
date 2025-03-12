@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Input type="file" @change="handleFile"></Input>
+    <Input accept=".json" type="file" @change="handleFile"></Input>
   </div>
   <div class="flex items-start mt-4 gap-4">
     <div class="w-1/2 p-4 rounded-lg  border border-gray-300">
@@ -39,16 +39,24 @@
       <pre class="p-2 rounded-lg overflow-x-auto">{{ file }}</pre>
     </div>
   </div>
-  <Button class="w-full mt-2" @click="addQuizBulk">Upload</Button>
+  <Button
+      :class="[jsonValidator ? 'bg-green-500' : 'bg-red-500 cursor-not-allowed disabled' ,'w-full mt-2']"
+      @click="addQuizBulk">Upload
+  </Button>
 </template>
 
 <script setup>
 import {Input} from "@/components/ui/input/index.js";
 import {Button} from "@/components/ui/button/index.js";
 import {supabase} from "@/lib/supabaseClient.js";
-import {ref} from "vue";
+import {computed, ref} from "vue";
 
 const file = ref(null);
+
+const jsonValidator = computed(() => {
+  if (!file.value) return false;
+  return file.value.quiz && file.value.questions && Array.isArray(file.value.questions) && file.value.questions.every(q => q.enonce);
+});
 
 const handleFile = (e) => {
   const reader = new FileReader();
