@@ -1,9 +1,9 @@
 <template>
   <div id='app'>
     <router-view></router-view>
-    <top-bar></top-bar>
+    <game-recap></game-recap>
   </div>
 </template>
 <script setup>
-import TopBar from "@/components/top-bar.vue";
+import GameRecap from "@/components/game-recap.vue";
 </script>

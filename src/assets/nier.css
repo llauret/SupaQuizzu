@@ -1,0 +1,321 @@
+.nier-container {
+    padding: 1.5rem;
+    background-color: rgba(20, 20, 20, 0.85);
+    color: #e2d8bf;
+    font-family: 'Century Gothic', sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.nier-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+.nier-title h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    padding: 0 1rem;
+    white-space: nowrap;
+}
+
+.nier-line {
+    height: 1px;
+    background-color: #e2d8bf;
+    flex-grow: 1;
+    max-width: 80px;
+    opacity: 0.8;
+}
+
+.nier-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.nier-option {
+    position: relative;
+    cursor: pointer;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--delay);
+}
+
+.nier-frame {
+    position: relative;
+    border: 1px solid rgba(226, 216, 191, 0.5);
+    padding: 1rem;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nier-corner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: #e2d8bf;
+    border-style: solid;
+    border-width: 0;
+    transition: all 0.3s ease;
+}
+
+.tl {
+    top: -1px;
+    left: -1px;
+    border-top-width: 1px;
+    border-left-width: 1px;
+}
+
+.tr {
+    top: -1px;
+    right: -1px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+}
+
+.bl {
+    bottom: -1px;
+    left: -1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+}
+
+.br {
+    bottom: -1px;
+    right: -1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+}
+
+.nier-text {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-weight: 300;
+}
+
+.nier-option:hover .nier-frame {
+    background-color: rgba(226, 216, 191, 0.1);
+}
+
+.nier-option:hover .nier-corner {
+    width: 15px;
+    height: 15px;
+}
+
+.nier-selected .nier-frame {
+    border-color: rgba(226, 216, 191, 0.9);
+    background-color: rgba(226, 216, 191, 0.15);
+    box-shadow: 0 0 15px rgba(226, 216, 191, 0.2);
+}
+
+.nier-selected .nier-text {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.nier-selected .nier-corner {
+    width: 15px;
+    height: 15px;
+    border-color: #ffffff;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.nier-button {
+    position: relative;
+    cursor: pointer;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    min-width: 150px;
+}
+
+.nier-button-frame {
+    position: relative;
+    border: 1px solid rgba(226, 216, 191, 0.7);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background-color: rgba(20, 20, 20, 0.85);
+}
+
+.nier-corner {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-color: #e2d8bf;
+    border-style: solid;
+    border-width: 0;
+    transition: all 0.3s ease;
+}
+
+.nier-button-text {
+    font-size: 1.25rem;
+    letter-spacing: 3px;
+    font-weight: 300;
+    color: #e2d8bf;
+    text-transform: uppercase;
+}
+
+.nier-button:hover .nier-button-frame {
+    background-color: rgba(226, 216, 191, 0.15);
+    box-shadow: 0 0 15px rgba(226, 216, 191, 0.2);
+}
+
+.nier-button:hover .nier-corner {
+    width: 12px;
+    height: 12px;
+    border-color: #ffffff;
+}
+
+.nier-button:hover .nier-button-text {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nier-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.nier-title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 0.5rem;
+    color: #454138;
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+.nier-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 1px;
+    background: rgba(69, 65, 56, 0.5);
+    transform: scaleX(0);
+    animation: lineExpand 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.4s;
+}
+
+.nier-title-line {
+    height: 1px;
+    background-color: rgba(69, 65, 56, 0.7);
+    width: 0;
+    margin-top: 1.5rem;
+    position: relative;
+}
+
+.nier-title-line.left {
+    animation: expandLeft 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+.nier-title-line.right {
+    animation: expandRight 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+.nier-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.2rem;
+    color: rgba(69, 65, 56, 0.8);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes lineExpand {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes expandLeft {
+    0% {
+        width: 0;
+        margin-right: 0;
+    }
+    100% {
+        width: 80px;
+        margin-right: 20px;
+    }
+}
+
+@keyframes expandRight {
+    0% {
+        width: 0;
+        margin-left: 0;
+    }
+    100% {
+        width: 80px;
+        margin-left: 20px;
+    }
+}

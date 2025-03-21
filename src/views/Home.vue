@@ -1,30 +1,32 @@
 <template>
+  <div class="top-0 absolute nier-button">
+    <nier-button :on-click="toggleIsFormCreateVisible" title="AJOUTER QUIZZ"/>
+  </div>
   <div class="background-container flex justify-center items-center w-full h-[66.6rem] mx-auto p-4">
     <div class="flex-wrap text-center">
-      <h1 class="text-4xl font-bold mb-4">SUPA QUIZZU</h1>
-      <Button class="mb-4 font-bold" @click="toggleIsSelecting">Start</Button>
+      <div class="nier-title-container">
+        <div class="nier-title-line left"></div>
+        <h1 class="nier-title">SUPA QUIZZU</h1>
+        <div class="nier-title-line right"></div>
+        <div class="nier-subtitle">SYSTEM V.1.0</div>
+      </div>
+      <div @click="toggleIsSelecting">
+        <nier-button title="START"/>
+      </div>
       <mode-selection :display-condition="isSelectingMode"/>
     </div>
     <form-create :displayCondtion="displayStore.isFormCreateVisible"></form-create>
-    <div class="absolute bottom-0 right-0 p-4">
-      <Button class="mb-4 font-bold" @click="toggleIsFormCreateVisible">Ajouter quizz</Button>
-    </div>
-
-    <router-link class="absolute bottom-0 left-0 p-4" to="/question">
-      <Button class="mb-4 font-bold">Jouer</Button>
-    </router-link>
-
   </div>
 </template>
 
 <script setup>
-import {Button} from "@/components/ui/button";
 import FormCreate from "@/components/form-create.vue";
 import {onMounted, ref} from "vue";
 import {useQuestionStore} from "@/stores/question.store.js";
 import {useStatStore} from "@/stores/stat.store.js";
 import {useDisplayStore} from "@/stores/display.store.js";
 import ModeSelection from "@/components/mode/mode-selection.vue";
+import NierButton from "@/components/nier-button.vue";
 
 const displayStore = useDisplayStore();
 const questionStore = useQuestionStore();
@@ -47,7 +49,7 @@ const toggleIsSelecting = () => {
 
 </script>
 
-<style scoped>
+<style scoped src="@/assets/nier.css">
 .background-container {
   background-size: cover;
   background-position: center;

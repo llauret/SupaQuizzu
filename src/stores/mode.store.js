@@ -3,8 +3,8 @@ import {defineStore} from "pinia";
 export const useModeStore = defineStore("modeStore", {
     state: () => ({
         quizSelected: localStorage.getItem('quizSelected') || '',
-        timerSelected: localStorage.getItem('timerSelected') || '',
-        questionAmount: localStorage.getItem('questionAmount') || '',
+        timerSelected: parseInt(localStorage.getItem('timerSelected')) || 0,
+        questionAmount: parseInt(localStorage.getItem('questionAmount')) || 0,
     }),
     actions: {
         setQuizSelected(quizSelected) {

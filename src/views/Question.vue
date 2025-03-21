@@ -2,6 +2,8 @@
   <div class="flex gap-5">
     <score :score-change="scoreChange"/>
     <question-count/>
+    <timer-countdown/>
+    <game-recap/>
   </div>
   <ai-query></ai-query>
   <div class="w-full h-[52rem] justify-center items-center place-content-center">
@@ -29,6 +31,8 @@ import router from "@/router.js";
 import {useQuestionStore} from "@/stores/question.store.js";
 import QuestionCount from "@/components/question-count.vue";
 import {useModeStore} from "@/stores/mode.store.js";
+import TimerCountdown from "@/components/timer-countdown.vue";
+import GameRecap from "@/components/game-recap.vue";
 
 const questionStore = useQuestionStore();
 const modeStore = useModeStore();
@@ -43,7 +47,7 @@ onMounted(async () => {
 
 async function getQuestion() {
   const {data} = await supabase.rpc('get_custom_question', {
-    nombre: modeStore.questionAmount,
+    nombre: modeStore.questionAmount ? modeStore.questionAmount : 100,
     quiz_type: modeStore.quizSelected
   });
   currentQuestion.value = groupQuestionsByID(data);

@@ -1,10 +1,27 @@
 <template>
-  <div class="bg-red-500 w-full">
-    <div v-for="(quiz, index) in quizTitle" :key="index" class="cursor-pointer"
-         @click="modeStore.setQuizSelected(quiz.titre)">
-      <h1>{{ quiz.titre }}</h1>
+  <div class="nier-container">
+    <div class="nier-title">
+      <div class="nier-line"></div>
+      <h3>Questionnaires</h3>
+      <div class="nier-line"></div>
     </div>
-    {{ modeStore.quizSelected }}
+    <div class="nier-grid">
+      <div
+          v-for="(quiz, index) in quizTitle"
+          :key="index" :class="['nier-option', modeStore.quizSelected === quiz.titre ? 'nier-selected' : '']"
+          :style="{'--delay': index * 0.15 + 's'}"
+          class="cursor-pointer"
+          @click="modeStore.setQuizSelected(quiz.titre)"
+      >
+        <div class="nier-frame">
+          <div class="nier-corner tl"></div>
+          <div class="nier-corner tr"></div>
+          <div class="nier-corner bl"></div>
+          <div class="nier-corner br"></div>
+          <span class="nier-text">{{ quiz.titre }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script setup>
@@ -21,3 +38,6 @@ onMounted(async () => {
 })
 
 </script>
+
+<style scoped src="@/assets/nier.css">
+</style>
