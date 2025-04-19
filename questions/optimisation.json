@@ -1,0 +1,446 @@
+{
+  "quiz": "Optimisation",
+  "questions": [
+    {
+      "enonce": "Qu'est-ce que la Recherche Opérationnelle (RO) ?",
+      "reponses": [
+        {
+          "reponse": "Une branche des sciences humaines appliquées aux organisations.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Une discipline à la frontière des mathématiques appliquées et de l'informatique qui vise à résoudre des problèmes opérationnels.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "Un ensemble de techniques pour la programmation web.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Une méthode de gestion financière exclusivement.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quel est l'objectif principal de la RO ?",
+      "reponses": [
+        {
+          "reponse": "Optimiser la communication entre les membres d'une équipe.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Trouver des solutions optimales pour des problèmes opérationnels réels en utilisant des modèles mathématiques.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "Développer des interfaces utilisateur attractives.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Augmenter la capacité de stockage des données.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quel algorithme est cité dans la présentation pour la recherche du plus court chemin ?",
+      "reponses": [
+        {
+          "reponse": "L'algorithme de Prim",
+          "est_correcte": false
+        },
+        {
+          "reponse": "L'algorithme de Kruskal",
+          "est_correcte": false
+        },
+        {
+          "reponse": "L'algorithme de Dijkstra",
+          "est_correcte": true
+        },
+        {
+          "reponse": "L'algorithme A*",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Dans le problème du voyageur de commerce, quelle caractéristique rend le problème combinatoire particulièrement difficile ?",
+      "reponses": [
+        {
+          "reponse": "La résolution en temps polynomial.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La nécessité de visiter chaque ville plusieurs fois.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Le nombre de solutions possibles est égal à n! (factorielle de n).",
+          "est_correcte": true
+        },
+        {
+          "reponse": "La limitation du nombre de villes.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quel problème illustre l'explosion combinatoire dans la recherche du plus court chemin ?",
+      "reponses": [
+        {
+          "reponse": "La multiplication de matrices dans les algorithmes de tri.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "L'énumération de tous les chemins possibles dans un labyrinthe, conduisant à environ 2^n chemins différents.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "La factorisation de grands nombres premiers.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Le calcul de la dérivée d'une fonction complexe.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Dans l'exemple de la ferme, quel est l'objectif du programme linéaire présenté ?",
+      "reponses": [
+        {
+          "reponse": "Maximiser la production totale de légumes.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Minimiser le temps de main d'œuvre tout en respectant une demande de production totale.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "Optimiser l'utilisation des engrais pour améliorer la qualité des sols.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Maximiser l'utilisation des stocks disponibles.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quel solveur est utilisé dans l'exemple de la ferme pour résoudre le programme linéaire ?",
+      "reponses": [
+        {
+          "reponse": "IBM ILOG CPLEX",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Gurobi Optimization",
+          "est_correcte": false
+        },
+        {
+          "reponse": "GLPK (GNU Linear Programming Kit)",
+          "est_correcte": true
+        },
+        {
+          "reponse": "Microsoft Excel Solver",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quelle méthode est utilisée pour modéliser et résoudre les problèmes dans la RO ?",
+      "reponses": [
+        {
+          "reponse": "La programmation orientée objet.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La modélisation mathématique et la formulation de problèmes en maximisation ou minimisation sous contraintes.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "L'analyse statistique descriptive uniquement.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Le développement d'applications mobiles.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quel domaine d'application de la RO est illustré par la planification des tournées de véhicules ?",
+      "reponses": [
+        {
+          "reponse": "La gestion des ressources humaines.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Le transport et la logistique.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "La curiethérapie.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La programmation linéaire.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quel domaine d'application de la RO concerne la planification de l'utilisation des blocs opératoires ?",
+      "reponses": [
+        {
+          "reponse": "La gestion de la production industrielle.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Le développement durable en agriculture.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Le secteur de la santé.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "La conception de logiciels.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quelle méthode heuristique s'inspire du comportement des fourmis pour résoudre des problèmes d'optimisation ?",
+      "reponses": [
+        {
+          "reponse": "Recuit simulé",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Algorithme de colonies de fourmis",
+          "est_correcte": true
+        },
+        {
+          "reponse": "Recherche tabou",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Optimisation par essaims particulaires",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Parmi les logiciels suivants, lequel n'est PAS mentionné dans la présentation ?",
+      "reponses": [
+        {
+          "reponse": "IBM ILOG CPLEX",
+          "est_correcte": false
+        },
+        {
+          "reponse": "MATLAB Optimization Toolbox",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Oracle Database",
+          "est_correcte": true
+        },
+        {
+          "reponse": "Microsoft Excel Solver",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Dans l'exemple d'autoconsommation collective, quel est l'objectif du calcul des clés de répartition ?",
+      "reponses": [
+        {
+          "reponse": "Minimiser la consommation totale des participants.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Maximiser le gain du producteur en répartissant l'énergie produite.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "Assurer une répartition égale de l'énergie à tous les participants.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Réduire le nombre de participants au système.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quelle contrainte caractérise typiquement un problème de programmation linéaire ?",
+      "reponses": [
+        {
+          "reponse": "La contrainte que toutes les variables soient des nombres entiers.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La présence d'inégalités linéaires entre les variables de décision.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "La contrainte d'utiliser uniquement des algorithmes gloutons.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La contrainte d'une complexité exponentielle.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quel problème est illustré par l'exemple du sac à dos dans la présentation ?",
+      "reponses": [
+        {
+          "reponse": "La recherche du plus court chemin.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La sélection d'objets pour maximiser la valeur totale sans dépasser une contrainte de poids.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "L'optimisation des horaires de travail.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La coloration de graphes.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quelle méthode de recherche locale empêche la revisite des solutions déjà explorées ?",
+      "reponses": [
+        {
+          "reponse": "Recherche tabou",
+          "est_correcte": true
+        },
+        {
+          "reponse": "Recuit simulé",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Algorithme génétique",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Optimisation par essaims particulaires",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quelle méthode s'inspire du processus de recuit métallurgique pour explorer l'espace des solutions ?",
+      "reponses": [
+        {
+          "reponse": "Recuit simulé",
+          "est_correcte": true
+        },
+        {
+          "reponse": "Recherche tabou",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Algorithme de colonies de fourmis",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Algorithme génétique",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Dans le contexte de la RO, que signifie le terme 'optimisation' ?",
+      "reponses": [
+        {
+          "reponse": "La réduction du temps de calcul des algorithmes.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La recherche de la meilleure solution parmi un ensemble de solutions possibles.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "L'augmentation du budget alloué à un projet.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La simplification des modèles mathématiques.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quel avantage offre la programmation par contraintes en Recherche Opérationnelle ?",
+      "reponses": [
+        {
+          "reponse": "Elle permet de contourner complètement l'utilisation d'algorithmes heuristiques.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Elle permet de résoudre des problèmes en satisfaisant directement un ensemble de contraintes imposées.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "Elle garantit toujours une solution optimale en temps linéaire.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Elle simplifie l'analyse statistique des données.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quel est le rôle des méta-heuristiques en Recherche Opérationnelle ?",
+      "reponses": [
+        {
+          "reponse": "Elles fournissent des solutions exactes en toutes circonstances.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Elles permettent d'obtenir des solutions approchées pour des problèmes trop complexes à résoudre exactement en un temps raisonnable.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "Elles remplacent entièrement les méthodes de programmation linéaire.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Elles optimisent exclusivement les processus de fabrication.",
+          "est_correcte": false
+        }
+      ]
+    },
+    {
+      "enonce": "Quel domaine d'application de la RO est illustré dans le secteur de l'énergie ?",
+      "reponses": [
+        {
+          "reponse": "La gestion des ressources humaines dans les entreprises énergétiques.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Le dimensionnement et le management d'un système électrique, ainsi que le placement de bornes de recharge.",
+          "est_correcte": true
+        },
+        {
+          "reponse": "La coloration de graphes pour l'optimisation énergétique.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La planification des tournées de véhicules électriques uniquement.",
+          "est_correcte": false
+        }
+      ]
+    }
+  ]
+}

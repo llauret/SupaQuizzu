@@ -68,6 +68,11 @@
     }
 }
 
+@font-face {
+    font-family: 'Nier';
+    src: url('FOT-RodinProN-DB.otf');
+}
+
 body {
     background-color: #d1cdb7;
     -webkit-background-size: 0.3rem 0.3rem;
@@ -103,7 +108,6 @@ body {
             rgba(204, 200, 177, 0) 1px
     ),
     linear-gradient(to bottom, #ccc8b1 1px, rgba(204, 200, 177, 0) 1px);
-    font-family: helvetica, sans-serif;
     letter-spacing: 0.03rem;
     font-weight: lighter;
     color: #454138;

@@ -1,14 +1,14 @@
 <template>
-  <div class="top-0 absolute nier-button">
-    <nier-button :on-click="toggleIsFormCreateVisible" title="AJOUTER QUIZZ"/>
+  <div class="top-0 absolute nier-button z-50" @click="toggleIsFormCreateVisible">
+    <nier-button title="AJOUTER QUIZZ"/>
   </div>
-  <div class="background-container flex justify-center items-center w-full h-[66.6rem] mx-auto p-4">
+  <div class="background-container flex justify-center items-center w-full h-[66.6rem] mx-auto p-4 select-none">
     <div class="flex-wrap text-center">
       <div class="nier-title-container">
         <div class="nier-title-line left"></div>
         <h1 class="nier-title">SUPA QUIZZU</h1>
         <div class="nier-title-line right"></div>
-        <div class="nier-subtitle">SYSTEM V.1.0</div>
+        <div class="nier-subtitle">SYSTEM V.1.3</div>
       </div>
       <div @click="toggleIsSelecting">
         <nier-button title="START"/>
@@ -37,6 +37,7 @@ const isSelectingMode = ref(false);
 onMounted(() => {
   questionStore.setQuestionNumber(0);
   statStore.resetPointCounter();
+  displayStore.isGameOver = false;
 });
 
 const toggleIsFormCreateVisible = () => {

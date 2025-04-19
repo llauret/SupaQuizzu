@@ -5,15 +5,13 @@
     <timer-countdown/>
     <game-recap/>
   </div>
-  <ai-query></ai-query>
   <div class="w-full h-[52rem] justify-center items-center place-content-center">
-    <div class="text-center font-bold text-4xl mb-4">
+    <div class="text-center font-bold text-4xl">
       {{ currentQuestionObject.question }}
     </div>
     <div class="flex justify-center items-center w-full mx-auto p-4">
       <answer
-          :answers="currentQuestionObject.reponses"
-          :correctAnswer="correctAnswerValue"
+          :answers="currentQuestionObject.reponses" :correctAnswer="correctAnswerValue"
           @select-answer="checkAnswer"
       ></answer>
     </div>
@@ -26,14 +24,14 @@ import {computed, onMounted, ref} from "vue";
 import {supabase} from "@/lib/supabaseClient.js";
 import {useStatStore} from "@/stores/stat.store.js";
 import Score from "@/components/score.vue";
-import AiQuery from "@/components/ai-query.vue";
-import router from "@/router.js";
 import {useQuestionStore} from "@/stores/question.store.js";
 import QuestionCount from "@/components/question-count.vue";
 import {useModeStore} from "@/stores/mode.store.js";
 import TimerCountdown from "@/components/timer-countdown.vue";
 import GameRecap from "@/components/game-recap.vue";
+import {useDisplayStore} from "@/stores/display.store.js";
 
+const displayStore = useDisplayStore();
 const questionStore = useQuestionStore();
 const modeStore = useModeStore();
 const statStore = useStatStore();
@@ -101,7 +99,7 @@ const checkAnswer = (selectedAnswer) => {
     statStore.decrementPointCounter();
     pushToNextQuestion();
   }
-  if (correctAnswerValue.value === null) router.push('/');
+  if (correctAnswerValue.value === null) displayStore.isGameOver = true;
 }
 </script>
 

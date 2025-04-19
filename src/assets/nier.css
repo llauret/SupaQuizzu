@@ -2,7 +2,6 @@
     padding: 1.5rem;
     background-color: rgba(20, 20, 20, 0.85);
     color: #e2d8bf;
-    font-family: 'Century Gothic', sans-serif;
     max-width: 600px;
     margin: 0 auto;
     position: relative;
@@ -170,7 +169,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    background-color: rgba(20, 20, 20, 0.85);
+    background-color: rgba(20, 20, 20);
 }
 
 .nier-corner {
@@ -192,7 +191,6 @@
 }
 
 .nier-button:hover .nier-button-frame {
-    background-color: rgba(226, 216, 191, 0.15);
     box-shadow: 0 0 15px rgba(226, 216, 191, 0.2);
 }
 

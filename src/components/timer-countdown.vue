@@ -7,9 +7,11 @@
 import {onMounted, ref} from "vue";
 import {useModeStore} from "@/stores/mode.store.js";
 import {useDisplayStore} from "@/stores/display.store.js";
+import {useStatStore} from "@/stores/stat.store.js";
 
 const displayStore = useDisplayStore();
 const modeStore = useModeStore();
+const statStore = useStatStore();
 
 const clock = ref('00:00');
 let timer = modeStore.timerSelected * 60;
@@ -29,9 +31,10 @@ const countDown = () => {
   clock.value = `${minutes}:${secondes}`;
   timer = timer <= 0 ? 0 : timer - 1;
   if (timer === 0) displayStore.isGameOver = true;
+  if (displayStore.isGameOver) {
+    statStore.finalTimer = clock.value;
+  }
 }
-
-
 </script>
 <style scoped>
 

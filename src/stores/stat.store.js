@@ -3,6 +3,7 @@ import {defineStore} from 'pinia'
 export const useStatStore = defineStore('statStore', {
     state: () => ({
         pointCounter: parseInt(localStorage.getItem('pointCounter')) || 0,
+        finalTimer: parseFloat(localStorage.getItem('finalTimer')) || 0
     }), actions: {
         incrementPointCounter() {
             this.pointCounter += 500

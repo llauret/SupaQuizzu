@@ -5,7 +5,7 @@
       <div class="nier-corner tr"></div>
       <div class="nier-corner bl"></div>
       <div class="nier-corner br"></div>
-      <span class="nier-button-text" @click="onClick">{{ title }}</span>
+      <span class="nier-button-text" @mousedown="onClick">{{ title }}</span>
     </div>
   </div>
 </template>
