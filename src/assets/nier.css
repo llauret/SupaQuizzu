@@ -169,7 +169,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    background-color: rgba(20, 20, 20);
+    background-color: #4d4a41;
 }
 
 .nier-corner {
@@ -201,7 +201,7 @@
 }
 
 .nier-button:hover .nier-button-text {
-    color: #ffffff;
+    color: #c0bba5;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
@@ -276,6 +276,53 @@
     opacity: 0;
     animation: fadeIn 0.8s ease-out forwards;
     animation-delay: 1s;
+}
+
+.square {
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    flex-shrink: 0;
+    background-color: #4d4a41;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nier-answer {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    align-items: center;
+    gap: 2rem;
+    background-color: #c0bba5;
+    background-size: 0.3rem 0.3rem;
+    background-image: linear-gradient(to right, #bab59f 1px, rgba(204, 200, 177, 0) 1px), linear-gradient(to bottom, #bab59f 1px, rgba(204, 200, 177, 0) 1px);;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #4d4a41;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nier-answer:hover {
+    background-color: #4d4a41;
+    background-size: 0.3rem 0.3rem;
+    background-image: linear-gradient(to right, #47443b 1px, rgba(204, 200, 177, 0) 1px), linear-gradient(to bottom, #47443b 1px, rgba(204, 200, 177, 0) 1px);;
+    color: #c0bba5;
+}
+
+.nier-answer:hover > .square {
+    background-color: #d4ceb6;
+}
+
+.nier-answer.active {
+    background-color: #4d4a41;
+    background-size: 0.3rem 0.3rem;
+    background-image: linear-gradient(to right, #47443b 1px, rgba(204, 200, 177, 0) 1px), linear-gradient(to bottom, #47443b 1px, rgba(204, 200, 177, 0) 1px);;
+    color: #c0bba5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 @keyframes fadeIn {

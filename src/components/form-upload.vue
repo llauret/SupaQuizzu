@@ -1,38 +1,71 @@
 <template>
   <div>
-    <Input accept=".json" type="file" @change="handleFile"></Input>
-  </div>
-  <div class="flex items-start mt-4 gap-4">
-    <div class="w-1/2 p-4 rounded-lg  border border-gray-300">
-      <div class="flex justify-between">
-        <h3 class="font-bold mb-2">JSON sous ce format :</h3>
-        <button
-            :class="{ 'copied': isCopied }"
-            class="nier-copy-button"
-            title="Copy to clipboard"
-            @click="copyToClipboard">
-          <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-               stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
-            <rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-          </svg>
-          <span class="copy-tooltip">{{ isCopied ? 'Copied!' : 'Copy' }}</span>
-        </button>
+    <Input
+        accept=".json"
+        class="w-full bg-transparent border-b border-nierBrown/30 py-2 pl-4 outline-none focus:border-nierBrown mb-4"
+        type="file"
+        @change="handleFile"
+    />
+
+    <div class="flex items-start gap-4">
+      <div class="relative w-1/2 bg-nierLightBrown border border-nierBrown p-4">
+
+        <div class="flex justify-between items-center mb-2 ">
+          <h3 class="text-lg font-bold">JSON sous ce format :</h3>
+          <button
+              :class="['nier-copy-button text-nierBrown', { 'copied': isCopied }]"
+              title="Copy to clipboard"
+              @click="copyToClipboard"
+          >
+            <svg
+                class="inline-block"
+                fill="none"
+                height="16"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span class="copy-tooltip ml-1">
+              {{ isCopied ? 'Copied!' : 'Copy' }}
+            </span>
+          </button>
+        </div>
+
+        <pre
+            class="bg-transparent border border-nierBrown  p-2 h-full overflow-y-auto text-sm"
+        >{{ jsonExample }}</pre>
       </div>
-      <pre class="p-2 rounded-lg overflow-x-auto h-80">
-      {{ jsonExample }}
-    </pre>
+
+      <div
+          class="w-1/2 bg-nierLightBrown border border-nierBrown p-4 h-[38rem] overflow-y-auto"
+      >
+        <h3
+            class="text-lg font-bold mb-2 sticky top-0 z-10 pt-2"
+        >
+          Contenu du fichier :
+        </h3>
+        <pre class="p-2 bg-transparent">{{ file }}</pre>
+      </div>
     </div>
-    <div class="w-1/2 p-4 rounded-lg shadow-md border border-gray-300 overflow-y-auto h-96">
-      <h3 class="font-bold mb-2 sticky top-0">Contenu du fichier :</h3>
-      <pre class="p-2 rounded-lg overflow-x-auto">{{ file }}</pre>
-    </div>
+
+    <Button
+        :class="jsonValidator ? 'bg-nierLightBrown hover:opacity-90' : 'bg-nierBrown'"
+        :disabled="!jsonValidator"
+        class="w-full mt-4 h-[4rem] font-bold rounded transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+        @click="addQuizBulk"
+    >
+      Upload
+    </Button>
   </div>
-  <Button
-      :class="[jsonValidator ? 'bg-green-500' : 'bg-red-500 cursor-not-allowed disabled' ,'w-full mt-2']"
-      @click="addQuizBulk">Upload
-  </Button>
 </template>
+
 
 <script setup>
 import {Input} from "@/components/ui/input/index.js";
@@ -116,7 +149,6 @@ const addQuizBulk = async () => {
   align-items: center;
   justify-content: center;
   padding: 5px;
-  color: #e2d8bf;
   background: transparent;
   border: 1px solid rgba(226, 216, 191, 0.5);
   cursor: pointer;
