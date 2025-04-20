@@ -9,19 +9,21 @@
           <span class="w-4 h-4 mr-3 bg-[#d4ceb6]"></span>
           R E S U L T A T
         </div>
-        <div v-for="(quiz, index) in ranking" :key="index">
-          <div class="flex justify-between px-8 py-2 border-b text-nierLightBrown h-24 overflow-y-auto">
-            <div class="text-lg font-bold">[{{ index + 1 }}] {{ quiz.username }}</div>
-            <div class="text-lg font-bold">{{ quiz.score }} points</div>
+        <div class="max-h-48 overflow-y-auto">
+          <div v-for="(quiz, index) in ranking" :key="index">
+            <div
+                class="flex justify-between px-8 py-2 border-b border-nierLightBrown text-nierLightBrown overflow-y-auto">
+              <div class="text-lg font-bold">[{{ index + 1 }}] {{ quiz.username }}</div>
+              <div class="text-lg font-bold">{{ quiz.score }} points</div>
+            </div>
           </div>
-
         </div>
         <div class="px-8 py-6 checked">
           <div class="text-center text-2xl mb-4">‑ Questions correcte <span
               class="text-red-600 font-bold"> {{ countCorrectAnswer }} </span> ‑
           </div>
           <div class="text-center text-lg mb-6">
-            <span class="text-red-600 font-bold">RECORD</span>
+            <span class="text-red-600 font-bold">S C O R E</span>
             <span class="font-bold"> - {{ statStore.pointCounter }} points </span>
             <br>
             <span class="font-bold text-nierBlue">- Temps restant {{ statStore.finalTimer }} -</span>
@@ -67,23 +69,21 @@
             />
           </div>
 
-          <button
-              :disabled="!username"
-              class="bg-nierBrown w-full text-nierLightBrown font-bold py-2 px-6 over:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
-              @mousedown="addRecord"
-          >
-            Enregistrer le record
-          </button>
+          <router-link to="/">
+            <button
+                :disabled="!username"
+                class="bg-nierBrown w-full text-nierLightBrown font-bold py-2 px-6 over:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+                @mousedown="addRecord"
+            >
+              Enregistrer le record
+            </button>
+          </router-link>
 
           <div class="mt-6 text-center">
-            <router-link class="underline hover:text-red-600" to="/">
+            <router-link class="underline hover:text-red-600" to="/" @mousedown="playSound('/sounds/nier-confirm.mp3')">
               Retourner au menu
             </router-link>
           </div>
-        </div>
-
-        <div class="flex justify-between mt-4">
-          <timer-countdown/>
         </div>
       </div>
     </div>
@@ -95,9 +95,8 @@ import {computed, onMounted, ref} from 'vue';
 import {useDisplayStore} from '@/stores/display.store.js';
 import {useStatStore} from '@/stores/stat.store.js';
 import {supabase} from '@/lib/supabaseClient.js';
-import TimerCountdown from '@/components/timer-countdown.vue';
-import router from "@/router.js";
 import {useModeStore} from "@/stores/mode.store.js";
+import {playSound} from "@/composables/playSound.js";
 
 const displayStore = useDisplayStore();
 const statStore = useStatStore();
@@ -125,7 +124,7 @@ const addRecord = async () => {
     quiz_param: modeStore.quizSelected
   })
   console.log('Record added');
-  await router.push('/');
+  playSound('/sounds/nier-confirm.mp3');
 }
 </script>
 

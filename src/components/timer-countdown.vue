@@ -3,11 +3,12 @@
     {{ clock }}
   </div>
 </template>
+
 <script setup>
-import {onMounted, ref} from "vue";
-import {useModeStore} from "@/stores/mode.store.js";
-import {useDisplayStore} from "@/stores/display.store.js";
-import {useStatStore} from "@/stores/stat.store.js";
+import {onMounted, onUnmounted, ref, watch} from 'vue';
+import {useModeStore} from '@/stores/mode.store.js';
+import {useDisplayStore} from '@/stores/display.store.js';
+import {useStatStore} from '@/stores/stat.store.js';
 
 const displayStore = useDisplayStore();
 const modeStore = useModeStore();
@@ -15,27 +16,32 @@ const statStore = useStatStore();
 
 const clock = ref('00:00');
 let timer = modeStore.timerSelected * 60;
+let intervalId = null;
 
-onMounted(() => {
-  setInterval(countDown, 1000);
-});
-
-const countDown = () => {
-  if (timer <= 0) return;
-  let minutes = parseInt(timer / 60);
-  let secondes = parseInt(timer % 60);
-
-  minutes = minutes < 10 ? `0${minutes}` : minutes;
-  secondes = secondes < 10 ? `0${secondes}` : secondes;
-
-  clock.value = `${minutes}:${secondes}`;
-  timer = timer <= 0 ? 0 : timer - 1;
-  if (timer === 0) displayStore.isGameOver = true;
-  if (displayStore.isGameOver) {
-    statStore.finalTimer = clock.value;
+function updateClock() {
+  if (timer <= 0) {displayStore.isGameOver = true;} else {
+    const minutes = String(Math.floor(timer / 60)).padStart(2, '0');
+    const seconds = String(timer % 60).padStart(2, '0');
+    clock.value = `${minutes}:${seconds}`;
+    timer--;
   }
 }
-</script>
-<style scoped>
 
-</style>
+function stopTimer() {
+  if (intervalId !== null) {
+    clearInterval(intervalId);
+    intervalId = null;
+  }
+  statStore.finalTimer = clock.value;
+}
+
+onMounted(() => {intervalId = setInterval(updateClock, 1000);})
+
+watch(() => displayStore.isGameOver,
+    (isOver) => {
+      if (isOver) stopTimer();
+    }
+)
+
+onUnmounted(() => {stopTimer();})
+</script>

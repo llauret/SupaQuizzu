@@ -1,0 +1,563 @@
+{
+  "quiz": "Droit",
+  "questions": [
+    {
+      "enonce": "Quel pays a adopté la loi NetzDG en 2017 ?",
+      "reponses": [
+        { "reponse": "Espagne", "est_correcte": false },
+        { "reponse": "Italie", "est_correcte": false },
+        { "reponse": "Allemagne", "est_correcte": true },
+        { "reponse": "France", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Qui a proposé la loi contre la haine en ligne en France en 2019 ?",
+      "reponses": [
+        { "reponse": "Laetitia Avia", "est_correcte": true },
+        { "reponse": "Marlène Schiappa", "est_correcte": false },
+        { "reponse": "Agnès Buzyn", "est_correcte": false },
+        { "reponse": "Nathalie Loiseau", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel délai imposait la loi Avia pour le retrait des contenus haineux manifestement illicites après signalement ?",
+      "reponses": [
+        { "reponse": "48 heures", "est_correcte": false },
+        { "reponse": "12 heures", "est_correcte": false },
+        { "reponse": "72 heures", "est_correcte": false },
+        { "reponse": "24 heures", "est_correcte": true }
+      ]
+    },
+    {
+      "enonce": "Pourquoi le Conseil constitutionnel a-t-il censuré la loi Avia ?",
+      "reponses": [
+        { "reponse": "Parce que la loi ne prévoyait pas de sanctions pour les plateformes", "est_correcte": false },
+        { "reponse": "Car le caractère manifestement illicite était difficile à apprécier dans le délai imparti", "est_correcte": true },
+        { "reponse": "Parce que le mécanisme de supervision échappait au contrôle des juges", "est_correcte": false },
+        { "reponse": "Parce que le texte violait la liberté d'expression en autorisant trop de suppressions", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel pourcentage de contenus supprimés par les plateformes l'est suite à leur détection spontanée par algorithmes ?",
+      "reponses": [
+        { "reponse": "Entre 95 % et 99 %", "est_correcte": true },
+        { "reponse": "Moins de 50 %", "est_correcte": false },
+        { "reponse": "Environ 75 %", "est_correcte": false },
+        { "reponse": "Plus de 100 % des cas", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel principe est au cœur de l’approche systémique du DSA ?",
+      "reponses": [
+        { "reponse": "Principe « faites ce que vous voulez, dites ce que vous faites »", "est_correcte": false },
+        { "reponse": "Principe « dites ce que vous faites, faites ce que vous dites »", "est_correcte": true },
+        { "reponse": "Principe « neutralité de la plateforme »", "est_correcte": false },
+        { "reponse": "Principe « responsabilité unique des hébergeurs »", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Que doivent faire les très grandes plateformes selon le DSA pour les risques systémiques ?",
+      "reponses": [
+        { "reponse": "Publier un rapport annuel sans audit indépendant", "est_correcte": false },
+        { "reponse": "Mettre en place un système de recommandation interne", "est_correcte": false },
+        { "reponse": "Évaluer les risques et atténuer ceux-ci avec audit indépendant", "est_correcte": true },
+        { "reponse": "Maintenir la confidentialité totale des algorithmes", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quand le DSA est-il entré pleinement en vigueur ?",
+      "reponses": [
+        { "reponse": "1er janvier 2025", "est_correcte": false },
+        { "reponse": "17 février 2023", "est_correcte": false },
+        { "reponse": "17 février 2025", "est_correcte": false },
+        { "reponse": "17 février 2024", "est_correcte": true }
+      ]
+    },
+    {
+      "enonce": "Quel principe fondamental le DSA cherche-t-il à mettre en pratique ?",
+      "reponses": [
+        { "reponse": "Ce qui est illégal hors ligne est illégal en ligne", "est_correcte": true },
+        { "reponse": "Les plateformes sont responsables à 100 % des contenus tiers", "est_correcte": false },
+        { "reponse": "Les États membres ne peuvent pas réguler les plateformes", "est_correcte": false },
+        { "reponse": "La neutralité du net doit être abandonnée", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Lequel des objectifs suivants n’est pas visé par le DSA ?",
+      "reponses": [
+        { "reponse": "Renforcer la protection des internautes européens", "est_correcte": false },
+        { "reponse": "Aider les petites entreprises de l’UE à se développer", "est_correcte": false },
+        { "reponse": "Réduire les taxes sur les services numériques", "est_correcte": true },
+        { "reponse": "Renforcer la surveillance démocratique des très grandes plateformes", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quels acteurs sont visés par le DSA ?",
+      "reponses": [
+        { "reponse": "Uniquement les moteurs de recherche", "est_correcte": false },
+        { "reponse": "Les services d’informatique en nuage et les plateformes en ligne", "est_correcte": false },
+        { "reponse": "Tous les intermédiaires en ligne offrant leurs services sur le marché européen", "est_correcte": false },
+        { "reponse": "Tous les intermédiaires en ligne offrant leurs services sur le marché européen", "est_correcte": true }
+      ]
+    },
+    {
+      "enonce": "Laquelle de ces plateformes n’est pas classée comme très grande plateforme selon le DSA ?",
+      "reponses": [
+        { "reponse": "Facebook", "est_correcte": false },
+        { "reponse": "Airbnb", "est_correcte": true },
+        { "reponse": "TikTok", "est_correcte": false },
+        { "reponse": "YouTube", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel seuil d’utilisateurs par mois définit une 'très grande' plateforme ou moteur de recherche ?",
+      "reponses": [
+        { "reponse": "Plus de 100 millions d'utilisateurs", "est_correcte": false },
+        { "reponse": "Plus de 10 millions d'utilisateurs", "est_correcte": false },
+        { "reponse": "Plus de 45 millions d’utilisateurs", "est_correcte": true },
+        { "reponse": "Plus de 5 millions d'utilisateurs", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle obligation s’applique à tous les acteurs en ligne sous le DSA ?",
+      "reponses": [
+        { "reponse": "Désigner un point de contact unique", "est_correcte": true },
+        { "reponse": "Fournir un algorithme au public", "est_correcte": false },
+        { "reponse": "Versement d’une taxe spécifique", "est_correcte": false },
+        { "reponse": "Supprimer tous les contenus signalés en 12h", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Laquelle de ces catégories de mesures ne fait pas partie des obligations principales du DSA ?",
+      "reponses": [
+        { "reponse": "Lutte contre les contenus illicites", "est_correcte": false },
+        { "reponse": "Transparence en ligne", "est_correcte": false },
+        { "reponse": "Atténuation des risques et réponse aux crises", "est_correcte": false },
+        { "reponse": "Confidentialité des utilisateurs", "est_correcte": true }
+      ]
+    },
+    {
+      "enonce": "Quelle mesure appartient à la lutte contre les contenus illicites sous le DSA ?",
+      "reponses": [
+        { "reponse": "Expliquer le fonctionnement des algorithmes publicitaires", "est_correcte": false },
+        { "reponse": "Proposer un outil de signalement pour les internautes", "est_correcte": true },
+        { "reponse": "Effectuer un audit indépendant annuel", "est_correcte": false },
+        { "reponse": "Fournir l’accès aux données clés aux chercheurs", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle obligation de transparence concerne les algorithmes de recommandation ?",
+      "reponses": [
+        { "reponse": "Publier le code source complet sur leur site web", "est_correcte": false },
+        { "reponse": "Désactiver toute recommandation basée sur les profils", "est_correcte": false },
+        { "reponse": "Expliquer le fonctionnement des algorithmes utilisées", "est_correcte": true },
+        { "reponse": "Limiter le nombre de recommandations par utilisateur", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle forme de publicité devient interdite selon le DSA ?",
+      "reponses": [
+        { "reponse": "Publicité ciblée pour les mineurs", "est_correcte": true },
+        { "reponse": "Publicité contextuelle basée sur la page visitée", "est_correcte": false },
+        { "reponse": "Publicité affichée seulement aux utilisateurs connectés", "est_correcte": false },
+        { "reponse": "Publicité sur les réseaux sociaux", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelles analyses doivent réaliser chaque année les très grandes plateformes ?",
+      "reponses": [
+        { "reponse": "Analyse des données financières", "est_correcte": false },
+        { "reponse": "Étude de marché pour la concurrence", "est_correcte": false },
+        { "reponse": "Audits de sécurité du réseau", "est_correcte": false },
+        { "reponse": "Risques systémiques liés à la haine, aux droits fondamentaux, etc.", "est_correcte": true }
+      ]
+    },
+    {
+      "enonce": "Laquelle de ces mesures d’atténuation n’est pas imposée par le DSA ?",
+      "reponses": [
+        { "reponse": "Suppression des faux comptes", "est_correcte": false },
+        { "reponse": "Réduction des commissions sur les ventes", "est_correcte": true },
+        { "reponse": "Respect de codes de conduite", "est_correcte": false },
+        { "reponse": "Visibilité accrue des sources d’information autorisées", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel organe supervise le DSA au niveau européen ?",
+      "reponses": [
+        { "reponse": "Comité européen des services numériques", "est_correcte": true },
+        { "reponse": "Parlement européen", "est_correcte": false },
+        { "reponse": "Cour de justice de l'UE", "est_correcte": false },
+        { "reponse": "Conseil de l'Union européenne", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel organisme sera coordinateur national en France pour le DSA ?",
+      "reponses": [
+        { "reponse": "CNIL", "est_correcte": false },
+        { "reponse": "CSA", "est_correcte": false },
+        { "reponse": "Arcom", "est_correcte": true },
+        { "reponse": "Conseil constitutionnel", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel pourcentage du chiffre d’affaires mondial sert à financer la supervision des très grandes plateformes ?",
+      "reponses": [
+        { "reponse": "1 %", "est_correcte": false },
+        { "reponse": "0.05 %", "est_correcte": true },
+        { "reponse": "0.5 %", "est_correcte": false },
+        { "reponse": "2 %", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle amende maximale peut être infligée aux très grandes plateformes en cas de non-respect du DSA ?",
+      "reponses": [
+        { "reponse": "1 % du chiffre d'affaires", "est_correcte": false },
+        { "reponse": "10 % du chiffre d'affaires", "est_correcte": false },
+        { "reponse": "3 % du chiffre d'affaires", "est_correcte": false },
+        { "reponse": "6 % du chiffre d'affaires", "est_correcte": true }
+      ]
+    },
+    {
+      "enonce": "En cas de violations graves et répétées, quelle sanction peut être prise contre une plateforme ?",
+      "reponses": [
+        { "reponse": "Suspension temporaire des comptes administrateurs", "est_correcte": false },
+        { "reponse": "Amende de 0,5 % du chiffre d'affaires", "est_correcte": false },
+        { "reponse": "Interdiction de leurs activités sur le marché européen", "est_correcte": true },
+        { "reponse": "Obligation de cesser toute publicité ciblée", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel régime de responsabilité bénéficiaient les hébergeurs avant le DSA ?",
+      "reponses": [
+        { "reponse": "Responsabilité très allégée", "est_correcte": true },
+        { "reponse": "Responsabilité pleine et entière", "est_correcte": false },
+        { "reponse": "Responsabilité partagée avec l’éditeur", "est_correcte": false },
+        { "reponse": "Absence totale de toute responsabilité", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Pourquoi les premières lois (NetzDG, Avia) ont-elles été jugées insuffisantes ?",
+      "reponses": [
+        { "reponse": "Délai de retrait inadapté aux réalités de la modération", "est_correcte": true },
+        { "reponse": "Sanctions trop lourdes pour les petites plateformes", "est_correcte": false },
+        { "reponse": "Portée limitée aux seuls moteurs de recherche", "est_correcte": false },
+        { "reponse": "Absence de mécanisme de notification aux utilisateurs", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel mécanisme interne les plateformes doivent-elles mettre en place pour contester une suspension de compte ?",
+      "reponses": [
+        { "reponse": "Recours direct au juge national", "est_correcte": false },
+        { "reponse": "Système interne de traitement des réclamations", "est_correcte": true },
+        { "reponse": "Saisine du Conseil constitutionnel", "est_correcte": false },
+        { "reponse": "Intervention d’un médiateur européen", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "La publicité basée sur laquelle de ces données sensibles est interdite sans consentement explicite ?",
+      "reponses": [
+        { "reponse": "Revenus bancaires", "est_correcte": false },
+        { "reponse": "Historique de navigation", "est_correcte": false },
+        { "reponse": "Opinions politiques", "est_correcte": true },
+        { "reponse": "Préférences musicales", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Comment appelle-t-on les entités dont les notifications sont traitées en priorité par les plateformes ?",
+      "reponses": [
+        { "reponse": "Algorithmes internes", "est_correcte": false },
+        { "reponse": "Signaleurs de confiance", "est_correcte": true },
+        { "reponse": "Coordinateurs nationaux", "est_correcte": false },
+        { "reponse": "Modérateurs bénévoles", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Combien de très grandes plateformes en ligne sont visées par le DSA ?",
+      "reponses": [
+        { "reponse": "15", "est_correcte": false },
+        { "reponse": "17", "est_correcte": true },
+        { "reponse": "20", "est_correcte": false },
+        { "reponse": "12", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Laquelle de ces entreprises figure parmi les très grandes plateformes listées par le DSA ?",
+      "reponses": [
+        { "reponse": "Booking.com", "est_correcte": true },
+        { "reponse": "Airbnb", "est_correcte": false },
+        { "reponse": "Uber", "est_correcte": false },
+        { "reponse": "eBay", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel organe européen peut imposer des mesures d’urgence aux grandes plateformes en cas de crise ?",
+      "reponses": [
+        { "reponse": "Cour de justice de l’UE", "est_correcte": false },
+        { "reponse": "Commission européenne", "est_correcte": true },
+        { "reponse": "Parlement européen", "est_correcte": false },
+        { "reponse": "Conseil de l'Union européenne", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Comment se nomme le groupe qui regroupe les coordinateurs nationaux du DSA ?",
+      "reponses": [
+        { "reponse": "Groupe d’experts de l’informatique", "est_correcte": false },
+        { "reponse": "Comité européen des services numériques", "est_correcte": true },
+        { "reponse": "Agence européenne des médias", "est_correcte": false },
+        { "reponse": "Conseil permanent des plateformes", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Lequel de ces risques n’est pas spécifiquement cité comme systémique dans le DSA ?",
+      "reponses": [
+        { "reponse": "Émissions de CO₂", "est_correcte": true },
+        { "reponse": "Santé publique", "est_correcte": false },
+        { "reponse": "Discours civique", "est_correcte": false },
+        { "reponse": "Processus électoraux", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle garantie le DSA prévoit-il pour la liberté d’expression ?",
+      "reponses": [
+        { "reponse": "Suppression systématique sans justification", "est_correcte": false },
+        { "reponse": "Anonymat complet des modérateurs", "est_correcte": false },
+        { "reponse": "Justifier les mesures de modération et offrir des voies de recours", "est_correcte": true },
+        { "reponse": "Publication publique de toutes les décisions internes", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Que doit désigner un intermédiaire établi hors de l’Union européenne ?",
+      "reponses": [
+        { "reponse": "Un auditeur externe", "est_correcte": false },
+        { "reponse": "Un représentant légal", "est_correcte": true },
+        { "reponse": "Un coordinateur national", "est_correcte": false },
+        { "reponse": "Un point de contact interne", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel élément doit figurer dans le registre public des publicités ?",
+      "reponses": [
+        { "reponse": "Montant total dépensé", "est_correcte": false },
+        { "reponse": "Mots-clés ciblés", "est_correcte": false },
+        { "reponse": "Identité de qui a parrainé l’annonce", "est_correcte": true },
+        { "reponse": "Texte intégral de l’annonce", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel type d’audit annuel les très grandes plateformes doivent-elles effectuer selon le DSA ?",
+      "reponses": [
+        { "reponse": "Audit financier externe", "est_correcte": false },
+        { "reponse": "Audit de conformité RGPD", "est_correcte": false },
+        { "reponse": "Audit indépendant de réduction des risques", "est_correcte": true },
+        { "reponse": "Audit de sécurité réseau", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel taux de piratage est mentionné pour les logiciels en Europe ?",
+      "reponses": [
+        { "reponse": "Environ 75 %", "est_correcte": false },
+        { "reponse": "Proche de 50 %", "est_correcte": true },
+        { "reponse": "Environ 10 %", "est_correcte": false },
+        { "reponse": "Environ 25 %", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Le Code de la propriété intellectuelle définit-il le logiciel ?",
+      "reponses": [
+        { "reponse": "Non, il ne le définit pas", "est_correcte": true },
+        { "reponse": "Oui, mais seulement pour le firmware", "est_correcte": false },
+        { "reponse": "Il le définit implicitement via la jurisprudence", "est_correcte": false },
+        { "reponse": "Oui, il en donne une définition exhaustive", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Lequel de ces composants n'est pas cité comme composant immatériel logiciel ?",
+      "reponses": [
+        { "reponse": "Un applicatif (tableur, etc.)", "est_correcte": false },
+        { "reponse": "Un firmware intégré au matériel", "est_correcte": false },
+        { "reponse": "Un système d'exploitation", "est_correcte": false },
+        { "reponse": "Un matériel réseau", "est_correcte": true }
+      ]
+    },
+    {
+      "enonce": "Qu'est-ce qu'un progiciel ?",
+      "reponses": [
+        { "reponse": "Un logiciel spécifique développé sur cahier des charges", "est_correcte": false },
+        { "reponse": "Un système d'exploitation open source", "est_correcte": false },
+        { "reponse": "Un ensemble complet de programmes documentés pour plusieurs utilisateurs, paramétrable", "est_correcte": true },
+        { "reponse": "Un micrologiciel (firmware) bas niveau", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel texte exclut en principe la brevetabilité des logiciels « en tant que tels » ?",
+      "reponses": [
+        { "reponse": "Le Patent Act des États‑Unis", "est_correcte": false },
+        { "reponse": "Le Code de la propriété intellectuelle", "est_correcte": false },
+        { "reponse": "La Directive européenne de 2002", "est_correcte": false },
+        { "reponse": "La Convention de Munich de 1973", "est_correcte": true }
+      ]
+    },
+    {
+      "enonce": "Que prévoyait le projet de directive de 2002 sur la brevetabilité des logiciels ?",
+      "reponses": [
+        { "reponse": "Interdire tout dépôt de brevets comportant un logiciel", "est_correcte": false },
+        { "reponse": "Breveter les inventions impliquant un programme informatique contribuant à l’état de la technique", "est_correcte": true },
+        { "reponse": "Étendre la protection aux idées et principes abstraits", "est_correcte": false },
+        { "reponse": "Reconnaître la brevetabilité des algorithmes mathématiques seuls", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel est le principal reproche fait à l’INPI lorsqu’il délivre un brevet logiciel ?",
+      "reponses": [
+        { "reponse": "Il garantit à tort la validité du brevet", "est_correcte": false },
+        { "reponse": "Il délivre sans examen formel", "est_correcte": false },
+        { "reponse": "Il ne garantit pas la validité du brevet", "est_correcte": true },
+        { "reponse": "Il ne délivre jamais de brevets logiciels", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Selon la jurisprudence de l’OEB, qu’exige la brevetabilité d’un logiciel ?",
+      "reponses": [
+        { "reponse": "Son originalité littéraire", "est_correcte": false },
+        { "reponse": "Son caractère technique", "est_correcte": true },
+        { "reponse": "Sa performance maximale", "est_correcte": false },
+        { "reponse": "Son utilité commerciale", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel critère définit l’originalité d’un logiciel pour le droit d’auteur ?",
+      "reponses": [
+        { "reponse": "Une empreinte de la personnalité de l’auteur", "est_correcte": true },
+        { "reponse": "Un état de l’art technique", "est_correcte": false },
+        { "reponse": "Une utilité économique avérée", "est_correcte": false },
+        { "reponse": "Une codification matérielle spécifique", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle est la durée de protection des logiciels par le droit d’auteur ?",
+      "reponses": [
+        { "reponse": "70 ans après le décès de l’auteur", "est_correcte": true },
+        { "reponse": "20 ans à compter de la création", "est_correcte": false },
+        { "reponse": "50 ans après la première publication", "est_correcte": false },
+        { "reponse": "10 ans à compter de la mise en service", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Lequel de ces éléments ne bénéficie pas de la protection par le droit d’auteur ?",
+      "reponses": [
+        { "reponse": "Un algorithme en tant qu’idée abstraite", "est_correcte": true },
+        { "reponse": "Le cahier des charges original", "est_correcte": false },
+        { "reponse": "La documentation utilisateur originale", "est_correcte": false },
+        { "reponse": "Un langage de programmation original", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Que désigne la pratique de la « clean room » en matière logicielle ?",
+      "reponses": [
+        { "reponse": "Un environnement sécurisé pour le firmware", "est_correcte": false },
+        { "reponse": "Une méthode de test de compatibilité hardware", "est_correcte": false },
+        { "reponse": "Une séparation en deux équipes pour reproduire légalement des fonctionnalités", "est_correcte": true },
+        { "reponse": "Un protocole de cryptage pour protéger le code", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle copie est autorisée au seul utilisateur légitime d’un logiciel ?",
+      "reponses": [
+        { "reponse": "Une unique copie de sauvegarde", "est_correcte": true },
+        { "reponse": "Une copie privée illimitée", "est_correcte": false },
+        { "reponse": "Une copie à des fins commerciales", "est_correcte": false },
+        { "reponse": "Une copie pour location", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "À quelles fins la décompilation est-elle permise par le CPI ?",
+      "reponses": [
+        { "reponse": "Pour corriger des bugs et assurer l’interopérabilité", "est_correcte": true },
+        { "reponse": "Pour distribuer gratuitement le logiciel", "est_correcte": false },
+        { "reponse": "Pour optimiser la performance matérielle", "est_correcte": false },
+        { "reponse": "Pour pirater le code source", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Comment se définit un « freeware » ?",
+      "reponses": [
+        { "reponse": "Un logiciel gratuit sans contrepartie financière, réversible par l’auteur", "est_correcte": true },
+        { "reponse": "Un logiciel payant à tarif modéré", "est_correcte": false },
+        { "reponse": "Un logiciel protégé par brevet", "est_correcte": false },
+        { "reponse": "Un logiciel libre sous licence GPL", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle différence principale caractérise un « shareware » ?",
+      "reponses": [
+        { "reponse": "Il est gratuit sans possibilité de paiement", "est_correcte": false },
+        { "reponse": "Il nécessite souvent un petit paiement pour continuer l’utilisation", "est_correcte": true },
+        { "reponse": "Il est distribué uniquement en source ouverte", "est_correcte": false },
+        { "reponse": "Il est breveté par l’OEB", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel droit moral a été supprimé pour tenir compte des investissements logiciels ?",
+      "reponses": [
+        { "reponse": "Le droit de retrait et repentir", "est_correcte": true },
+        { "reponse": "Le droit à la paternité", "est_correcte": false },
+        { "reponse": "Le droit de divulgation", "est_correcte": false },
+        { "reponse": "Le droit au respect de l’œuvre", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Lequel de ces droits patrimoniaux concerne la traduction et l’adaptation d’un logiciel ?",
+      "reponses": [
+        { "reponse": "Le droit de reproduction", "est_correcte": false },
+        { "reponse": "Le droit de traduction et d’adaptation", "est_correcte": true },
+        { "reponse": "Le droit de distribution", "est_correcte": false },
+        { "reponse": "Le droit de représentation", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Lequel de ces éléments n’est pas un droit patrimonial du logiciel ?",
+      "reponses": [
+        { "reponse": "La pratique de la clean room", "est_correcte": true },
+        { "reponse": "Le droit dérivé", "est_correcte": false },
+        { "reponse": "Le droit de distribution", "est_correcte": false },
+        { "reponse": "Le droit de reproduction", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Comment définit-on l’interopérabilité d’un logiciel ?",
+      "reponses": [
+        { "reponse": "La capacité à échanger des données entre systèmes", "est_correcte": true },
+        { "reponse": "La compatibilité avec un seul OS", "est_correcte": false },
+        { "reponse": "La rapidité d’exécution maximale", "est_correcte": false },
+        { "reponse": "La taille minimale du code", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Comment se caractérise un code objet par rapport au code source ?",
+      "reponses": [
+        { "reponse": "Une série d’instructions chiffrées exécutables par la machine", "est_correcte": true },
+        { "reponse": "Une suite d’instructions lisibles par un programmeur", "est_correcte": false },
+        { "reponse": "Une documentation accompagnant le logiciel", "est_correcte": false },
+        { "reponse": "Un diagramme logique d’architecte", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Lequel de ces éléments est indifférent pour obtenir la protection par le droit d’auteur logiciel ?",
+      "reponses": [
+        { "reponse": "Le support d’exécution du logiciel", "est_correcte": true },
+        { "reponse": "L’originalité de la création", "est_correcte": false },
+        { "reponse": "La logique automatique du code", "est_correcte": false },
+        { "reponse": "La forme formelle du code source", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Sur quoi repose principalement la réalisation d’un logiciel spécifique ?",
+      "reponses": [
+        { "reponse": "Un cahier des charges détaillé répondant aux besoins de l’utilisateur", "est_correcte": true },
+        { "reponse": "Un dépôt de brevet auprès de l’INPI", "est_correcte": false },
+        { "reponse": "Une licence open source standard", "est_correcte": false },
+        { "reponse": "Une étude de marché préalable", "est_correcte": false }
+      ]
+    }
+  ]
+}

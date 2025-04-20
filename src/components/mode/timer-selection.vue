@@ -2,7 +2,7 @@
   <div class="nier-container">
     <div class="nier-title">
       <div class="nier-line"></div>
-      <h3>Timer</h3>
+      <h3 class="text-nierLightBrown">Timer</h3>
       <div class="nier-line"></div>
     </div>
 

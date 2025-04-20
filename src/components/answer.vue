@@ -12,6 +12,7 @@
 <script setup>
 import {onMounted, ref, onBeforeUnmount} from "vue";
 import {useDisplayStore} from "@/stores/display.store.js";
+import {playSound} from "@/composables/playSound.js";
 
 const props = defineProps({
   answers: Array,
@@ -44,15 +45,9 @@ onBeforeUnmount(() => {
   }
 });
 
-const playClickSound = () => {
-  const clickSound = new Audio('/sounds/nier-click.mp3');
-  clickSound.volume = 0.5;
-  clickSound.play();
-}
-
 const emitAnswer = (answer) => {
   emit('select-answer', answer);
-  playClickSound();
+  playSound('/sounds/nier-click.mp3');
   displayStore.setSelectedAnswers({
     question: props.currentQuestion,
     selectedAnswer: answer,

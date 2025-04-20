@@ -8,10 +8,10 @@
         <div class="nier-title-line left"></div>
         <h1 class="nier-title">SUPA QUIZZU</h1>
         <div class="nier-title-line right"></div>
-        <div class="nier-subtitle">SYSTEM V.1.4</div>
+        <div class="nier-subtitle">SYSTEM V.1.5</div>
       </div>
       <div @click="toggleIsSelecting">
-        <nier-button title="START"/>
+        <nier-button :on-click="() => playSound('/sounds/nier-click.mp3')" title="START"/>
       </div>
       <mode-selection :display-condition="isSelectingMode"/>
     </div>
@@ -27,6 +27,7 @@ import {useStatStore} from "@/stores/stat.store.js";
 import {useDisplayStore} from "@/stores/display.store.js";
 import ModeSelection from "@/components/mode/mode-selection.vue";
 import NierButton from "@/components/nier-button.vue";
+import {playSound} from "@/composables/playSound.js";
 
 const displayStore = useDisplayStore();
 const questionStore = useQuestionStore();
@@ -39,6 +40,7 @@ onMounted(() => {
   statStore.resetPointCounter();
   displayStore.isGameOver = false;
   displayStore.selectedAnswers = [];
+  playSound('/sounds/nier-entrance.mp3');
 });
 
 const toggleIsFormCreateVisible = () => {

@@ -2,443 +2,593 @@
   "quiz": "Optimisation",
   "questions": [
     {
-      "enonce": "Qu'est-ce que la Recherche Opérationnelle (RO) ?",
+      "enonce": "Qu’est-ce qu’un problème d’optimisation ?",
+      "reponses": [
+        { "reponse": "Calculer la dérivée seconde de la fonction objectif.", "est_correcte": false },
+        { "reponse": "Trouver dans l'ensemble des configurations Ω la solution minimisant la fonction objectif f.", "est_correcte": true },
+        { "reponse": "Maximiser la fonction de coût sans contrainte.", "est_correcte": false },
+        { "reponse": "Échantillonner aléatoirement le domaine sans évaluation de f.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Comment passe-t-on d’un problème de minimisation à un problème de maximisation ?",
+      "reponses": [
+        { "reponse": "En prenant l’inverse multiplicatif de la fonction objectif.", "est_correcte": false },
+        { "reponse": "En utilisant g(x) = –f(x).", "est_correcte": true },
+        { "reponse": "En dérivant la fonction objectif et en cherchant son maximum.", "est_correcte": false },
+        { "reponse": "En transposant la matrice de Hessienne.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle condition définit un minimum local pour une fonction f ?",
+      "reponses": [
+        { "reponse": "f(x') ≤ f(x) pour tout x dans un voisinage de x'.", "est_correcte": true },
+        { "reponse": "f(x') ≥ f(x) pour tout x dans l’espace de recherche Ω.", "est_correcte": false },
+        { "reponse": "f(x') = max f(x) sur Ω.", "est_correcte": false },
+        { "reponse": "f(x') > f(x) pour tout x dans un voisinage de x'.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Sur quoi repose une méthode de recherche locale ?",
+      "reponses": [
+        { "reponse": "Exploration par échantillonnage aléatoire.", "est_correcte": false },
+        { "reponse": "Exploration de proche en proche selon un voisinage.", "est_correcte": true },
+        { "reponse": "Utilisation d’une population de solutions potentielles.", "est_correcte": false },
+        { "reponse": "Application systématique de dérivées secondes.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quand utilise-t-on préférentiellement une méthode stochastique ?",
+      "reponses": [
+        { "reponse": "Lorsque la fonction objectif est non dérivable ou bruitée et qu’il y a de nombreux extrema.", "est_correcte": true },
+        { "reponse": "Lorsque la fonction objectif est quadratique et dérivable.", "est_correcte": false },
+        { "reponse": "Lorsqu’on dispose de la forme analytique exacte de f.", "est_correcte": false },
+        { "reponse": "Lorsque l’espace de recherche est extrêmement petit.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Lequel de ces algorithmes est une métaheuristique stochastique ?",
+      "reponses": [
+        { "reponse": "Méthode de relaxation (Gauss–Seidel).", "est_correcte": false },
+        { "reponse": "Recuit simulé.", "est_correcte": true },
+        { "reponse": "Méthode du gradient conjugué.", "est_correcte": false },
+        { "reponse": "Programmation linéaire.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Que stipule le théorème No Free Lunch en optimisation ?",
+      "reponses": [
+        { "reponse": "Qu’il existe un algorithme universellement meilleur pour tous les problèmes.", "est_correcte": false },
+        { "reponse": "Qu’en moyenne, tous les algorithmes ont des performances équivalentes sur l’ensemble des fonctions de coût.", "est_correcte": true },
+        { "reponse": "Qu’un algorithme gradient est toujours optimal.", "est_correcte": false },
+        { "reponse": "Qu’on ne peut pas résoudre de problèmes combinatoires.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Qu’est-ce qu’un problème d’optimisation combinatoire ?",
+      "reponses": [
+        { "reponse": "Un problème dont Ω est un sous-ensemble de ℝⁿ et continu.", "est_correcte": false },
+        { "reponse": "Un problème dont Ω est fini ou dénombrable (p.ex. sous‑ensemble de ℕⁿ).", "est_correcte": true },
+        { "reponse": "Un problème sans fonction objective.", "est_correcte": false },
+        { "reponse": "Un problème uniquement résolu par dérivation.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel exemple illustre un problème combinatoire classique ?",
+      "reponses": [
+        { "reponse": "Problème du voyageur de commerce.", "est_correcte": true },
+        { "reponse": "Optimisation d’un réseau continu d’antennes.", "est_correcte": false },
+        { "reponse": "Recalage rigide d’images médicales.", "est_correcte": false },
+        { "reponse": "Minimisation d’une fonction quadratique simple.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle est la forme générale d’un problème d’optimisation non linéaire à contraintes ?",
+      "reponses": [
+        { "reponse": "max f(x) sous h(x) = 0 uniquement.", "est_correcte": false },
+        { "reponse": "min f(x) sous g(x) ≤ 0 et h(x) = 0.", "est_correcte": true },
+        { "reponse": "min f(x) sans aucune contrainte.", "est_correcte": false },
+        { "reponse": "min f(x) sous g(x) = 0 uniquement.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle méthode est déterministe en optimisation ?",
+      "reponses": [
+        { "reponse": "Algorithme évolutionnaire.", "est_correcte": false },
+        { "reponse": "Recuit simulé.", "est_correcte": false },
+        { "reponse": "Méthode de gradient.", "est_correcte": true },
+        { "reponse": "Algorithme de colonies de fourmis.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel exemple illustre une méthode exacte (non approchée) ?",
+      "reponses": [
+        { "reponse": "Programmation linéaire.", "est_correcte": true },
+        { "reponse": "Algorithme génétique.", "est_correcte": false },
+        { "reponse": "Recuit simulé.", "est_correcte": false },
+        { "reponse": "Colonie de fourmis.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel principe permet à une métaheuristique de voisinage d’échapper à un minimum local ?",
+      "reponses": [
+        { "reponse": "Autoriser parfois une dégradation temporaire de la fonction objectif.", "est_correcte": true },
+        { "reponse": "Augmenter systématiquement le nombre de variables.", "est_correcte": false },
+        { "reponse": "Réduire la taille de l’espace de recherche à chaque itération.", "est_correcte": false },
+        { "reponse": "Utiliser uniquement des gradients pour se déplacer.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Qu’est-ce que l’optimisation multiobjectif ?",
+      "reponses": [
+        { "reponse": "Considérer plusieurs fonctions objectif contradictoires simultanément.", "est_correcte": true },
+        { "reponse": "Maximiser une seule fonction avec plusieurs variables.", "est_correcte": false },
+        { "reponse": "Minimiser la somme des carrés d’une seule fonction.", "est_correcte": false },
+        { "reponse": "Résoudre plusieurs problèmes indépendants l’un de l’autre.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Qu’est-ce qu’une méthode hybride en optimisation ?",
+      "reponses": [
+        { "reponse": "Combiner plusieurs métaheuristiques complémentaires.", "est_correcte": true },
+        { "reponse": "Appliquer uniquement la programmation linéaire.", "est_correcte": false },
+        { "reponse": "Utiliser une seule stratégie de voisinage.", "est_correcte": false },
+        { "reponse": "Réduire l’espace de recherche à un point fixe.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel critère n’existe pas pour choisir un algorithme d’optimisation selon le cours ?",
+      "reponses": [
+        { "reponse": "Temps de calcul raisonnable.", "est_correcte": false },
+        { "reponse": "Absence de recette miracle universelle.", "est_correcte": false },
+        { "reponse": "Adaptation à la structure mathématique du problème.", "est_correcte": false },
+        { "reponse": "Utiliser toujours le même algorithme pour tous les problèmes.", "est_correcte": true }
+      ]
+    },
+    {
+      "enonce": "La difficulté d’un problème d’optimisation est liée à quel facteur ?",
+      "reponses": [
+        { "reponse": "Nombre de variables à optimiser.", "est_correcte": true },
+        { "reponse": "Qualité de l’interface graphique.", "est_correcte": false },
+        { "reponse": "Marque du processeur utilisé.", "est_correcte": false },
+        { "reponse": "Taille du code source seulement.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Comment définit-on l'espace de recherche Ω ?",
+      "reponses": [
+        { "reponse": "L’ensemble des solutions admissibles du problème.", "est_correcte": true },
+        { "reponse": "L’espace des images médicales pour recalage.", "est_correcte": false },
+        { "reponse": "Le domaine des coefficients de la matrice Hessienne.", "est_correcte": false },
+        { "reponse": "Le vecteur gradients de f.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quelle est la principale caractéristique d’une méthode stochastique ?",
+      "reponses": [
+        { "reponse": "Elle utilise des tirages aléatoires pour guider la recherche.", "est_correcte": true },
+        { "reponse": "Elle dépend uniquement de la forme analytique de f.", "est_correcte": false },
+        { "reponse": "Elle garantit toujours l’optimum global.", "est_correcte": false },
+        { "reponse": "Elle n’explore jamais d’autres points que le point initial.", "est_correcte": false }
+      ]
+    },
+    {
+      "enonce": "Quel est l'objectif d'un problème d'optimisation ?",
       "reponses": [
         {
-          "reponse": "Une branche des sciences humaines appliquées aux organisations.",
+          "reponse": "Maximiser la variance des données d'entrée.",
           "est_correcte": false
         },
         {
-          "reponse": "Une discipline à la frontière des mathématiques appliquées et de l'informatique qui vise à résoudre des problèmes opérationnels.",
+          "reponse": "Trouver le minimum d'une fonction objective sur un ensemble de configurations.",
           "est_correcte": true
         },
         {
-          "reponse": "Un ensemble de techniques pour la programmation web.",
+          "reponse": "Classer les échantillons selon des catégories prédéfinies.",
           "est_correcte": false
         },
         {
-          "reponse": "Une méthode de gestion financière exclusivement.",
+          "reponse": "Réduire la complexité algorithmique d'un programme.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Quel est l'objectif principal de la RO ?",
+      "enonce": "Qu'est-ce qu'une méthode d'optimisation locale et déterministe ?",
       "reponses": [
         {
-          "reponse": "Optimiser la communication entre les membres d'une équipe.",
+          "reponse": "Un algorithme qui explore l'ensemble des solutions de façon aléatoire.",
           "est_correcte": false
         },
         {
-          "reponse": "Trouver des solutions optimales pour des problèmes opérationnels réels en utilisant des modèles mathématiques.",
+          "reponse": "Une technique qui garantit de trouver le minimum global.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Un algorithme qui se base sur le gradient pour converger vers un minimum local.",
           "est_correcte": true
         },
         {
-          "reponse": "Développer des interfaces utilisateur attractives.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Augmenter la capacité de stockage des données.",
+          "reponse": "Un processus analogique au refroidissement des métaux.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Quel algorithme est cité dans la présentation pour la recherche du plus court chemin ?",
+      "enonce": "Qu'est-ce qu'une méthode d'optimisation globale et stochastique ?",
       "reponses": [
         {
-          "reponse": "L'algorithme de Prim",
+          "reponse": "Descente de gradient stochastique.",
           "est_correcte": false
         },
         {
-          "reponse": "L'algorithme de Kruskal",
-          "est_correcte": false
-        },
-        {
-          "reponse": "L'algorithme de Dijkstra",
+          "reponse": "Recuit simulé.",
           "est_correcte": true
         },
         {
-          "reponse": "L'algorithme A*",
+          "reponse": "Méthode de Newton.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Algorithme de dichotomie.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Dans le problème du voyageur de commerce, quelle caractéristique rend le problème combinatoire particulièrement difficile ?",
+      "enonce": "Quelle est la formule de mise à jour de la descente de gradient en dimension 1 ?",
       "reponses": [
         {
-          "reponse": "La résolution en temps polynomial.",
+          "reponse": "x_{k+1} = x_k + γ · f'(x_k).",
           "est_correcte": false
         },
         {
-          "reponse": "La nécessité de visiter chaque ville plusieurs fois.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Le nombre de solutions possibles est égal à n! (factorielle de n).",
+          "reponse": "x_{k+1} = x_k - γ · f'(x_k).",
           "est_correcte": true
         },
         {
-          "reponse": "La limitation du nombre de villes.",
+          "reponse": "x_{k+1} = γ · x_k - f'(x_k).",
+          "est_correcte": false
+        },
+        {
+          "reponse": "x_{k+1} = x_k - f(x_k)/γ.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Quel problème illustre l'explosion combinatoire dans la recherche du plus court chemin ?",
+      "enonce": "Quel rôle joue le pas γ dans la descente de gradient ?",
       "reponses": [
         {
-          "reponse": "La multiplication de matrices dans les algorithmes de tri.",
+          "reponse": "Il fixe la température initiale dans le recuit simulé.",
           "est_correcte": false
         },
         {
-          "reponse": "L'énumération de tous les chemins possibles dans un labyrinthe, conduisant à environ 2^n chemins différents.",
+          "reponse": "Il définit la taille de l'échantillon utilisé pour le calcul du gradient.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Il détermine la vitesse de convergence et peut influencer le minimum atteint.",
           "est_correcte": true
         },
         {
-          "reponse": "La factorisation de grands nombres premiers.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Le calcul de la dérivée d'une fonction complexe.",
+          "reponse": "Il correspond à la probabilité d'acceptation d'une configuration.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Dans l'exemple de la ferme, quel est l'objectif du programme linéaire présenté ?",
+      "enonce": "Quels sont deux variants de la descente de gradient mentionnés ?",
       "reponses": [
         {
-          "reponse": "Maximiser la production totale de légumes.",
+          "reponse": "Métropolis et Boltzmann.",
           "est_correcte": false
         },
         {
-          "reponse": "Minimiser le temps de main d'œuvre tout en respectant une demande de production totale.",
+          "reponse": "Newton et quasi-Newton.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Batch et mini-batch.",
           "est_correcte": true
         },
         {
-          "reponse": "Optimiser l'utilisation des engrais pour améliorer la qualité des sols.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Maximiser l'utilisation des stocks disponibles.",
+          "reponse": "Convolution et pooling.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Quel solveur est utilisé dans l'exemple de la ferme pour résoudre le programme linéaire ?",
+      "enonce": "Quels sont les critères d'arrêt pour la descente de gradient ?",
       "reponses": [
         {
-          "reponse": "IBM ILOG CPLEX",
+          "reponse": "Atteinte de l'énergie minimale globale garantie.",
           "est_correcte": false
         },
         {
-          "reponse": "Gurobi Optimization",
+          "reponse": "Stabilisation de la probabilité d'acceptation.",
           "est_correcte": false
         },
         {
-          "reponse": "GLPK (GNU Linear Programming Kit)",
+          "reponse": "Augmentation de la température.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Variation négligeable de x ou nombre maximal d'itérations.",
+          "est_correcte": true
+        }
+      ]
+    },
+    {
+      "enonce": "Quelle condition caractérise un minimum d'une fonction dérivable ?",
+      "reponses": [
+        {
+          "reponse": "f(x) = 0.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "f'(x) = 0.",
           "est_correcte": true
         },
         {
-          "reponse": "Microsoft Excel Solver",
+          "reponse": "∇f(x) = 1.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "f'(x) > 0.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Quelle méthode est utilisée pour modéliser et résoudre les problèmes dans la RO ?",
+      "enonce": "En dimension n, comment la descente de gradient est-elle généralisée ?",
       "reponses": [
         {
-          "reponse": "La programmation orientée objet.",
+          "reponse": "x_{k+1} = x_k - γ · f'(x_k).",
           "est_correcte": false
         },
         {
-          "reponse": "La modélisation mathématique et la formulation de problèmes en maximisation ou minimisation sous contraintes.",
+          "reponse": "x_{k+1} = γ · ∇f(x_k).",
+          "est_correcte": false
+        },
+        {
+          "reponse": "x_{k+1} = ∇f(x_k) - γ · x_k.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "x_{k+1} = x_k - γ · ∇f(x_k).",
+          "est_correcte": true
+        }
+      ]
+    },
+    {
+      "enonce": "Quelle analogie physique inspire le recuit simulé ?",
+      "reponses": [
+        {
+          "reponse": "La polarisation magnétique des matériaux ferromagnétiques.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Le refroidissement progressif des métaux pour atteindre une structure cristalline.",
           "est_correcte": true
         },
         {
-          "reponse": "L'analyse statistique descriptive uniquement.",
+          "reponse": "La propagation d'ondes électromagnétiques.",
           "est_correcte": false
         },
         {
-          "reponse": "Le développement d'applications mobiles.",
+          "reponse": "La loi des gaz parfaits.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Quel domaine d'application de la RO est illustré par la planification des tournées de véhicules ?",
+      "enonce": "Quelle distribution est utilisée pour modéliser l'acceptation dans le recuit simulé ?",
       "reponses": [
         {
-          "reponse": "La gestion des ressources humaines.",
+          "reponse": "Distribution de Poisson.",
           "est_correcte": false
         },
         {
-          "reponse": "Le transport et la logistique.",
+          "reponse": "Distribution uniforme sur [0,1].",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Distribution de Gibbs / Boltzmann.",
           "est_correcte": true
         },
         {
-          "reponse": "La curiethérapie.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "La programmation linéaire.",
+          "reponse": "Distribution binomiale.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Quel domaine d'application de la RO concerne la planification de l'utilisation des blocs opératoires ?",
+      "enonce": "Quel critère d'acceptation de la configuration y remplace la condition E(y) < E(x) ?",
       "reponses": [
         {
-          "reponse": "La gestion de la production industrielle.",
+          "reponse": "P(y|x) = max(1, exp((E(y)-E(x))/T)).",
           "est_correcte": false
         },
         {
-          "reponse": "Le développement durable en agriculture.",
+          "reponse": "P(y|x) = exp(E(y)/E(x)).",
           "est_correcte": false
         },
         {
-          "reponse": "Le secteur de la santé.",
+          "reponse": "P(y|x) = min(1, exp(-(E(y)-E(x))/T)).",
           "est_correcte": true
         },
         {
-          "reponse": "La conception de logiciels.",
+          "reponse": "P(y|x) = (E(x)-E(y))/T.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Quelle méthode heuristique s'inspire du comportement des fourmis pour résoudre des problèmes d'optimisation ?",
+      "enonce": "Quel est l'impact de la température T sur la probabilité d'acceptation dans le recuit simulé ?",
       "reponses": [
         {
-          "reponse": "Recuit simulé",
+          "reponse": "À haute T, seules les configurations d'énergie inférieure sont acceptées.",
           "est_correcte": false
         },
         {
-          "reponse": "Algorithme de colonies de fourmis",
+          "reponse": "À basse T, toute configuration est acceptée.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La température n'a aucun impact.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "À haute T, presque toutes les configurations sont acceptées.",
+          "est_correcte": true
+        }
+      ]
+    },
+    {
+      "enonce": "Quel schéma de décroissance de la température est mentionné ?",
+      "reponses": [
+        {
+          "reponse": "T_k = T0 + k · α avec 0<α<1.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "T_k = T0 × α^k avec 0<α<1.",
           "est_correcte": true
         },
         {
-          "reponse": "Recherche tabou",
+          "reponse": "T_k = T0 / (1 + k).",
           "est_correcte": false
         },
         {
-          "reponse": "Optimisation par essaims particulaires",
+          "reponse": "T_k = α · log(k).",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Parmi les logiciels suivants, lequel n'est PAS mentionné dans la présentation ?",
+      "enonce": "Quels paramètres doivent être ajustés pour le recuit simulé ?",
       "reponses": [
         {
-          "reponse": "IBM ILOG CPLEX",
+          "reponse": "Le pas de gradient, la taille du mini-batch, et la fonction d'activation.",
           "est_correcte": false
         },
         {
-          "reponse": "MATLAB Optimization Toolbox",
+          "reponse": "Le taux d'apprentissage initial, le momentum et le bias.",
           "est_correcte": false
         },
         {
-          "reponse": "Oracle Database",
+          "reponse": "La température initiale, la longueur de palier et le schéma de décroissance.",
           "est_correcte": true
         },
         {
-          "reponse": "Microsoft Excel Solver",
+          "reponse": "Le nombre de couches cachées et la taille des neurones.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Dans l'exemple d'autoconsommation collective, quel est l'objectif du calcul des clés de répartition ?",
+      "enonce": "Quelle équation stochastique combine descente de gradient et perturbation aléatoire ?",
       "reponses": [
         {
-          "reponse": "Minimiser la consommation totale des participants.",
+          "reponse": "dx_t = γ ∇f(x_t) dt + exp(-E/T) dw_t.",
           "est_correcte": false
         },
         {
-          "reponse": "Maximiser le gain du producteur en répartissant l'énergie produite.",
+          "reponse": "dx_t = -∇E(x_t) dt + √(2 T_t) dw_t.",
           "est_correcte": true
         },
         {
-          "reponse": "Assurer une répartition égale de l'énergie à tous les participants.",
+          "reponse": "x_{k+1} = x_k - γ ∇f(x_k) + noise.",
           "est_correcte": false
         },
         {
-          "reponse": "Réduire le nombre de participants au système.",
+          "reponse": "dx_t = ∇E(x_t) dt - T_t dw_t.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Quelle contrainte caractérise typiquement un problème de programmation linéaire ?",
+      "enonce": "Dans l'équation de diffusion, quel terme correspond à la descente de gradient ?",
       "reponses": [
         {
-          "reponse": "La contrainte que toutes les variables soient des nombres entiers.",
+          "reponse": "√(2 T_t) dw_t.",
           "est_correcte": false
         },
         {
-          "reponse": "La présence d'inégalités linéaires entre les variables de décision.",
+          "reponse": "γ f'(x_k).",
+          "est_correcte": false
+        },
+        {
+          "reponse": "exp(-E/T) dw_t.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "-∇E(x_t) dt.",
+          "est_correcte": true
+        }
+      ]
+    },
+    {
+      "enonce": "Et quel terme représente la perturbation aléatoire dans l'équation de diffusion ?",
+      "reponses": [
+        {
+          "reponse": "-∇E(x_t) dt.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "γ dt.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "E(x_t) T_t.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "√(2 T_t) dw_t.",
+          "est_correcte": true
+        }
+      ]
+    },
+    {
+      "enonce": "Quelles conditions sont requises pour garantir la convergence de l'équation de diffusion ?",
+      "reponses": [
+        {
+          "reponse": "T_t doit être constant et dt grand.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "μ doit être proche de 1 et α proche de 0.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "T_t doit décroître suffisamment lentement et dt être petit.",
           "est_correcte": true
         },
         {
-          "reponse": "La contrainte d'utiliser uniquement des algorithmes gloutons.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "La contrainte d'une complexité exponentielle.",
+          "reponse": "T0 doit être nul au départ.",
           "est_correcte": false
         }
       ]
     },
     {
-      "enonce": "Quel problème est illustré par l'exemple du sac à dos dans la présentation ?",
+      "enonce": "Quelle différence principale existe-t-il entre la descente de gradient et le recuit simulé ?",
       "reponses": [
         {
-          "reponse": "La recherche du plus court chemin.",
+          "reponse": "Le recuit simulé est toujours plus rapide.",
           "est_correcte": false
         },
         {
-          "reponse": "La sélection d'objets pour maximiser la valeur totale sans dépasser une contrainte de poids.",
+          "reponse": "La descente de gradient utilise toujours un mini-batch.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "La descente de gradient nécessite une phase de refroidissement.",
+          "est_correcte": false
+        },
+        {
+          "reponse": "Le recuit simulé peut échapper aux minima locaux grâce à l'acceptation aléatoire.",
           "est_correcte": true
-        },
-        {
-          "reponse": "L'optimisation des horaires de travail.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "La coloration de graphes.",
-          "est_correcte": false
-        }
-      ]
-    },
-    {
-      "enonce": "Quelle méthode de recherche locale empêche la revisite des solutions déjà explorées ?",
-      "reponses": [
-        {
-          "reponse": "Recherche tabou",
-          "est_correcte": true
-        },
-        {
-          "reponse": "Recuit simulé",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Algorithme génétique",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Optimisation par essaims particulaires",
-          "est_correcte": false
-        }
-      ]
-    },
-    {
-      "enonce": "Quelle méthode s'inspire du processus de recuit métallurgique pour explorer l'espace des solutions ?",
-      "reponses": [
-        {
-          "reponse": "Recuit simulé",
-          "est_correcte": true
-        },
-        {
-          "reponse": "Recherche tabou",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Algorithme de colonies de fourmis",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Algorithme génétique",
-          "est_correcte": false
-        }
-      ]
-    },
-    {
-      "enonce": "Dans le contexte de la RO, que signifie le terme 'optimisation' ?",
-      "reponses": [
-        {
-          "reponse": "La réduction du temps de calcul des algorithmes.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "La recherche de la meilleure solution parmi un ensemble de solutions possibles.",
-          "est_correcte": true
-        },
-        {
-          "reponse": "L'augmentation du budget alloué à un projet.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "La simplification des modèles mathématiques.",
-          "est_correcte": false
-        }
-      ]
-    },
-    {
-      "enonce": "Quel avantage offre la programmation par contraintes en Recherche Opérationnelle ?",
-      "reponses": [
-        {
-          "reponse": "Elle permet de contourner complètement l'utilisation d'algorithmes heuristiques.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Elle permet de résoudre des problèmes en satisfaisant directement un ensemble de contraintes imposées.",
-          "est_correcte": true
-        },
-        {
-          "reponse": "Elle garantit toujours une solution optimale en temps linéaire.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Elle simplifie l'analyse statistique des données.",
-          "est_correcte": false
-        }
-      ]
-    },
-    {
-      "enonce": "Quel est le rôle des méta-heuristiques en Recherche Opérationnelle ?",
-      "reponses": [
-        {
-          "reponse": "Elles fournissent des solutions exactes en toutes circonstances.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Elles permettent d'obtenir des solutions approchées pour des problèmes trop complexes à résoudre exactement en un temps raisonnable.",
-          "est_correcte": true
-        },
-        {
-          "reponse": "Elles remplacent entièrement les méthodes de programmation linéaire.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Elles optimisent exclusivement les processus de fabrication.",
-          "est_correcte": false
-        }
-      ]
-    },
-    {
-      "enonce": "Quel domaine d'application de la RO est illustré dans le secteur de l'énergie ?",
-      "reponses": [
-        {
-          "reponse": "La gestion des ressources humaines dans les entreprises énergétiques.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "Le dimensionnement et le management d'un système électrique, ainsi que le placement de bornes de recharge.",
-          "est_correcte": true
-        },
-        {
-          "reponse": "La coloration de graphes pour l'optimisation énergétique.",
-          "est_correcte": false
-        },
-        {
-          "reponse": "La planification des tournées de véhicules électriques uniquement.",
-          "est_correcte": false
         }
       ]
     }

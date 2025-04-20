@@ -87,11 +87,9 @@ const pushToNextQuestion = () => {
 
 const checkAnswer = (selectedAnswer) => {
   if (selectedAnswer === correctAnswerValue.value) {
-    console.log('Correct');
     statStore.incrementPointCounter();
     pushToNextQuestion();
   } else {
-    console.log('Incorrect');
     statStore.decrementPointCounter();
     pushToNextQuestion();
   }
