@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">supaquizzu</string>
+    <string name="title_activity_main">supaquizzu</string>
+    <string name="package_name">fr.llauret.sp</string>
+    <string name="custom_url_scheme">fr.llauret.sp</string>
+</resources>
