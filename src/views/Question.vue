@@ -1,13 +1,21 @@
 <template>
-  <div class="w-full h-[52rem] justify-center items-center place-content-center">
-    <div class="text-center font-bold text-4xl">
+  <div
+      :class="[
+      'w-full h-[52rem] justify-center items-center place-content-center transition-all duration-300',
+      flashClass
+    ]"
+  >
+    <div class="text-center font-bold text-2xl pt-48 h-72">
       {{ currentQuestionObject.question }}
     </div>
     <div class="flex justify-center items-center w-full mx-auto p-4">
       <answer
-          :answers="currentQuestionObject.reponses" :correctAnswer="correctAnswerValue"
+          :answers="currentQuestionObject.reponses"
+          :correctAnswer="correctAnswerValue"
           :currentQuestion="currentQuestionObject.question"
-          @select-answer="checkAnswer"
+          :reveal-answers="revealAnswersState"
+          :selected-answer-for-feedback="lastSelectedAnswer"
+          @select-answer="handleAnswerSelection"
       ></answer>
     </div>
   </div>
@@ -34,6 +42,9 @@ const modeStore = useModeStore();
 const statStore = useStatStore();
 
 const currentQuestion = ref(null);
+const flashClass = ref('');
+const revealAnswersState = ref(false);
+const lastSelectedAnswer = ref(null);
 
 onMounted(async () => {
   await getQuestion();
@@ -52,12 +63,13 @@ const currentQuestionObject = computed(() => {
   if (currentQuestion.value && currentQuestion.value[questionStore.questionNumber]) {
     return currentQuestion.value[questionStore.questionNumber];
   }
-  return "Chargement…";
+  return {question: "Chargement...", reponses: []};
 });
 
 const correctAnswerValue = computed(() => {
-  if (currentQuestionObject.value && currentQuestionObject.value.reponses) {
-    return currentQuestionObject.value.reponses.find(r => r.est_correcte).reponse;
+  if (currentQuestionObject.value && currentQuestionObject.value.reponses && currentQuestionObject.value.reponses.length > 0) {
+    const correctAnswer = currentQuestionObject.value.reponses.find(r => r.est_correcte);
+    return correctAnswer ? correctAnswer.reponse : null;
   }
   return null;
 });
@@ -85,17 +97,41 @@ const pushToNextQuestion = () => {
   questionStore.setQuestionNumber(questionStore.questionNumber + 1);
 }
 
-const checkAnswer = (selectedAnswer) => {
-  if (selectedAnswer === correctAnswerValue.value) {
+const handleAnswerSelection = (selectedAnswer) => {
+  lastSelectedAnswer.value = selectedAnswer;
+  revealAnswersState.value = true;
+
+  const isCorrect = selectedAnswer === correctAnswerValue.value;
+
+  if (isCorrect) {
     statStore.incrementPointCounter();
-    pushToNextQuestion();
+    flashClass.value = 'flash-green';
   } else {
     statStore.decrementPointCounter();
-    pushToNextQuestion();
+    flashClass.value = 'flash-red';
   }
-  if (correctAnswerValue.value === null) displayStore.isGameOver = true;
+
+  setTimeout(() => {
+    flashClass.value = '';
+    revealAnswersState.value = false;
+    lastSelectedAnswer.value = null;
+
+    pushToNextQuestion();
+
+    if (correctAnswerValue.value === null || questionStore.questionNumber >= (currentQuestion.value?.length || 0)) {
+      displayStore.isGameOver = true;
+    }
+
+  }, 1000);
 }
 </script>
 
-<style scoped>
+<style scoped src="@/assets/nier.css">
+.flash-green {
+  border: 2px solid #4CAF50;
+}
+
+.flash-red {
+  border: 2px solid #F44336;
+}
 </style>

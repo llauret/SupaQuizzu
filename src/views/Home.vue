@@ -1,16 +1,18 @@
 <template>
-  <div class="top-0 absolute nier-button z-50" @click="toggleIsFormCreateVisible">
+  <div class="top-0 absolute nier-button z-50 hidden md:block" @click="toggleIsFormCreateVisible">
     <nier-button title="AJOUTER QUIZZ"/>
   </div>
-  <div class="background-container flex justify-center items-center w-full h-full mx-auto p-4 select-none mt-72">
+  <div
+      :class="{'mt-72': !isSelectingMode, 'mt-0': isSelectingMode}"
+      class="background-container flex justify-center items-center w-full h-full p-4 select-none">
     <div class="flex-wrap text-center">
       <div v-if="!isSelectingMode" class="nier-title-container">
         <div class="nier-title-line left"></div>
-        <h1 class="nier-title">SUPA QUIZZU</h1>
+        <h1 class="nier-title text-10xl">SUPA QUIZZU</h1>
         <div class="nier-title-line right"></div>
-        <div class="nier-subtitle">SYSTEM V.1.5</div>
+        <div class="nier-subtitle text-sm">SYSTEM V.1.5</div>
       </div>
-      <div @click="toggleIsSelecting">
+      <div v-if="!isSelectingMode" class="mt-6" @click="toggleIsSelecting">
         <nier-button :on-click="() => playSound('/sounds/nier-click.mp3')" title="START"/>
       </div>
       <mode-selection :display-condition="isSelectingMode"/>
@@ -18,7 +20,6 @@
   </div>
   <form-create :displayCondtion="displayStore.isFormCreateVisible"></form-create>
 </template>
-
 <script setup>
 import FormCreate from "@/components/form-create.vue";
 import {onMounted, ref} from "vue";

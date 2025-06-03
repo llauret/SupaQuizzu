@@ -1,9 +1,16 @@
 <template>
-  <div class="grid grid-cols-2 w-full gap-4 h-96 pt-32">
-    <div v-for="(answer, index) in answers" :key="index" @click="emitAnswer(answer.reponse)">
-      <div class="nier-answer select-none" @mouseenter="playHoverSound">
+  <div class="grid grid-cols-2 md:grid-cols-2 w-full gap-2 md:gap-4 h-auto md:h-96 pt-8 md:pt-32">
+    <div v-for="(answer, index) in answers" :key="index"
+         :class="{ 'pointer-events-none': props.revealAnswers }"
+         @click="!props.revealAnswers ? emitAnswer(answer.reponse) : null">
+      <div :class="{
+             'border-green-500 border-2': props.revealAnswers && answer.reponse === props.correctAnswer,
+             'border-red-500 border-2': props.revealAnswers && answer.reponse !== props.correctAnswer && answer.reponse === props.selectedAnswerForFeedback,
+           }"
+           class="nier-answer border-2 border-nierLightBrown select-none mb-3 md:mb-0"
+           @mouseenter="!props.revealAnswers ? playHoverSound : null">
         <div class="square"></div>
-        <div> {{ answer.reponse }}</div>
+        <div class="text-sm md:text-base "> {{ answer.reponse }}</div>
       </div>
     </div>
   </div>
@@ -16,10 +23,11 @@ import {playSound} from "@/composables/playSound.js";
 
 const props = defineProps({
   answers: Array,
-  correctAnswer: Number,
-  currentQuestion: String
+  correctAnswer: String,
+  currentQuestion: String,
+  revealAnswers: Boolean,
+  selectedAnswerForFeedback: String
 });
-
 const emit = defineEmits(['select-answer']);
 const displayStore = useDisplayStore();
 const audioContext = ref(null);

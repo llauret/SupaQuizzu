@@ -1,6 +1,12 @@
 <template>
-  <div v-if="clock !== '00:00'" class="bg-red-500 w-28 top-28 absolute right-0">
-    {{ clock }}
+  <div v-if="clock !== '00:00'" class="nier-container absolute top-20 text-center px-4 py-2 w-full">
+    <div class="nier-frame">
+      <div class="nier-corner tl"></div>
+      <div class="nier-corner tr"></div>
+      <div class="nier-corner bl"></div>
+      <div class="nier-corner br"></div>
+      <span class="nier-text text-2xl">{{ clock }}</span>
+    </div>
   </div>
 </template>
 
@@ -35,7 +41,7 @@ function stopTimer() {
   statStore.finalTimer = clock.value;
 }
 
-onMounted(() => {intervalId = setInterval(updateClock, 1000);})
+// onMounted(() => {intervalId = setInterval(updateClock, 1000);})
 
 watch(() => displayStore.isGameOver,
     (isOver) => {
